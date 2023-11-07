@@ -13,8 +13,14 @@ struct Provider: AppIntentTimelineProvider {
     
     
     func placeholder(in context: Context) -> SourceImageEntry {
-        print("DEBUG: goto placeholder")
-        return SourceImageEntry(image: UIImage(named: AssetConstant.imagePlacehodel)!, size: context.displaySize, type: .placeholder, btnChecklistModel: ButtonCheckListModel(), imgViewModel: ImageDataViewModel.shared, imgSrc: ImageSource(id: "img", actualName: "img", folderModel: FolderModel(name: "", suggestedName: "", type: .placeholder)), routineType: .single)
+        let imgSrc = ImageSource(id: "img", actualName: "img", folderModel: FolderModel(name: "", suggestedName: "", type: .placeholder))
+        return SourceImageEntry(image: UIImage(named: AssetConstant.imagePlacehodel)!,
+                                size: context.displaySize,
+                                type: .placeholder,
+                                btnChecklistModel: ButtonCheckListModel(),
+                                imgViewModel: ImageDataViewModel.shared,
+                                imgSrc: imgSrc,
+                                routineType: .single)
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SourceImageEntry {
@@ -32,6 +38,8 @@ struct Provider: AppIntentTimelineProvider {
         case .systemSmall, .systemLarge:
             imgSrc.images = configuration.imageSrc.getImages(family: .square)
         case .systemMedium:
+            imgSrc.images = configuration.imageSrc.getImages(family: .rectangle)
+        case .accessoryCircular, .accessoryInline, .accessoryRectangular:
             imgSrc.images = configuration.imageSrc.getImages(family: .rectangle)
         default:
             imgSrc.images = []

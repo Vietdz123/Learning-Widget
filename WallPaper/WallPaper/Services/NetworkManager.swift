@@ -68,7 +68,7 @@ class WDNetworkManager {
         }
         
         for (index, path) in data.path.enumerated() {
-                
+            
             dispathGroup.enter()
             
             let familyType = FamilyFolderType.getType(name: path.key_type)

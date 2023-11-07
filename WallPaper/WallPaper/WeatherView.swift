@@ -151,6 +151,7 @@ struct WeatherView: View {
             
                 WDNetworkManager.shared.requestApi { _ in
                     print("DEBUG: done")
+//                    Text("Done")
                 }
                 
             }

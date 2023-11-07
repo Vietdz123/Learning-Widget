@@ -75,6 +75,9 @@ struct DayView: View {
     var imageButton: UIImage {
         switch routineType {
         case .random:
+            if currentIndexCheckImage > btnCLModel.checkImage.count - 1 {
+                return btnCLModel.checkImage.first ?? UIImage(named: AssetConstant.unchecklistButton)!
+            }
             return imgSrc.dateCheckList[model.day.rawValue].isChecked ?
             btnCLModel.checkImage[currentIndexCheckImage] : btnCLModel.uncheckImage.shuffled().first ?? UIImage(named: AssetConstant.unchecklistButton)!
         case .single:

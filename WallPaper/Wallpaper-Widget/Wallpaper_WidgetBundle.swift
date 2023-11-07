@@ -29,7 +29,17 @@ struct WallpaperWidget: Widget {
                 .containerBackground(.fill.tertiary, for: .widget)
         }
         .contentMarginsDisabled()
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .supportedFamilies([
+            .systemSmall,
+            .systemMedium,
+            .systemLarge,
+            
+            
+            //Lock screen
+            .accessoryInline,
+            .accessoryCircular,
+            .accessoryRectangular
+        ])
         
         
         
