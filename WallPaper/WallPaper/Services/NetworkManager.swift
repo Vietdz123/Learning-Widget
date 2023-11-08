@@ -48,7 +48,7 @@ class WDNetworkManager {
 
                 } catch {
                     print("DEBUG: \(error.localizedDescription) fdfds")
-                    DispatchQueue.main.async { completion(false) }
+                    completion(false)
                 }
             }
 
@@ -68,25 +68,20 @@ class WDNetworkManager {
         }
         
         for (index, path) in data.path.enumerated() {
-            
             dispathGroup.enter()
             
             let familyType = FamilyFolderType.getType(name: path.key_type)
             
-            
             guard let url = URL(string: path.url.full),
                   let file = FileService.relativePath(with: "\(folderType.nameId)-\(folderName)")?.appendingPathComponent(familyType.rawValue).appendingPathComponent("\(path.file_name)")
-            else { completion(); return}
-    
-            FileManager.default.createFile(atPath: file.path, contents: nil)
-            
+            else { dispathGroup.leave(); completion(); return}
             
             let urlRequest = URLRequest(url: url)
-
+        
             URLSession.shared.downloadTask(with: urlRequest) { urlResponse, _, error in
-                if let _ = error { completion(); return }
+                if let _ = error { dispathGroup.leave(); completion(); return }
                 
-                guard let urlResponse = urlResponse else  { completion(); return }
+                guard let urlResponse = urlResponse else  { dispathGroup.leave(); completion(); return }
                 
                 
                 FileService.shared.writeToSource(with: folderName,
@@ -95,12 +90,11 @@ class WDNetworkManager {
                                                  widgetType: folderType,
                                                  familySize: familyType)
                 do {
-                    try FileManager.default.setAttributes([.creationDate: Date.now.addingTimeInterval(Double(index) * 10000000)], ofItemAtPath: file.path)
+                    try FileManager.default.setAttributes([.creationDate: Date.now.addingTimeInterval(Double(index) * 1000)], ofItemAtPath: file.path)
                 } catch {
                     print("DEBUG: wwhy failed \(error.localizedDescription) and \(file.absoluteURL)")
                 }
                 dispathGroup.leave()
-                print("DEBUG: dispathGroup.leave() \(urlResponse.absoluteURL)")
             }.resume()
         }
         
