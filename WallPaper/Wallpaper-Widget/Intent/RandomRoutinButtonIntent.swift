@@ -18,6 +18,10 @@ struct RandomRoutinButtonIntent: AppIntent {
         
     }
     
+    static var openAppWhenRun: Bool {
+        return false
+    }
+    
     static var title: LocalizedStringResource = "RandomRoutinButtonIntent"
     
     @Parameter(title: "Name ID")

@@ -19,6 +19,10 @@ struct SingleRoutineButtonIntent: AppIntent {
         
     }
     
+    static var openAppWhenRun: Bool {
+        return false
+    }
+    
     static var title: LocalizedStringResource = "SingleRoutineButtonIntent"
     
     @Parameter(title: "Name ID")
@@ -32,6 +36,7 @@ struct SingleRoutineButtonIntent: AppIntent {
         self.id_name = id_name
     }
     
+    @MainActor
     func perform() async throws -> some IntentResult & ReturnsValue {
         print("DEBUG: goto perform ToggleButtonIntent")
         

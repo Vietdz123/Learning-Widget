@@ -37,6 +37,7 @@ struct WallpaperWidget: Widget {
         }
         .contentMarginsDisabled()
         .supportedFamilies([ .systemMedium, .accessoryCircular,  .accessoryRectangular,])
+        
 //           systemSmall, .systemMedium, .systemLarge ,
 //                            .accessoryCircular, .accessoryInline, .accessoryRectangular])
         

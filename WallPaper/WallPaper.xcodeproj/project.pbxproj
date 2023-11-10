@@ -14,7 +14,6 @@
 		0478588C2AE0EC200072D7BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0478588B2AE0EC200072D7BB /* Preview Assets.xcassets */; };
 		047858992AE0ED0F0072D7BB /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047858982AE0ED0F0072D7BB /* WidgetKit.framework */; };
 		0478589B2AE0ED0F0072D7BB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478589A2AE0ED0F0072D7BB /* SwiftUI.framework */; };
-		0478589E2AE0ED0F0072D7BB /* Wallpaper_WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478589D2AE0ED0F0072D7BB /* Wallpaper_WidgetBundle.swift */; };
 		047858A22AE0ED0F0072D7BB /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047858A12AE0ED0F0072D7BB /* AppIntent.swift */; };
 		047858A42AE0ED110072D7BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047858A32AE0ED110072D7BB /* Assets.xcassets */; };
 		047858A82AE0ED110072D7BB /* Wallpaper-WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 047858962AE0ED0F0072D7BB /* Wallpaper-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -27,23 +26,11 @@
 		04884E6A2AEA036F009E5766 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04884E642AE9F837009E5766 /* NetworkManager.swift */; };
 		04884E6C2AEA03F0009E5766 /* WDNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04884E662AE9FC9D009E5766 /* WDNetworkModel.swift */; };
 		04884E6E2AEA0428009E5766 /* WDNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04884E662AE9FC9D009E5766 /* WDNetworkModel.swift */; };
-		048E69952AFC7D460082103B /* file_example_MP4_480_1_5MG.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 048E69942AFC7D450082103B /* file_example_MP4_480_1_5MG.mp4 */; };
+		0489C48A2AFDC9BF000D14A0 /* Wallpaper_WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478589D2AE0ED0F0072D7BB /* Wallpaper_WidgetBundle.swift */; };
 		048E69962AFC7D460082103B /* file_example_MP4_480_1_5MG.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 048E69942AFC7D450082103B /* file_example_MP4_480_1_5MG.mp4 */; };
 		048E69992AFC815E0082103B /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E69982AFC815E0082103B /* PlayerController.swift */; };
 		048E699A2AFC815E0082103B /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E69982AFC815E0082103B /* PlayerController.swift */; };
 		048E699D2AFC9AF30082103B /* SourceMakerIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E699B2AFC9AF30082103B /* SourceMakerIntent.swift */; };
-		048E699E2AFCD0E00082103B /* SourceMakerIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E699B2AFC9AF30082103B /* SourceMakerIntent.swift */; };
-		048E699F2AFCD0E40082103B /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9D0A42AE667B6003A773E /* Provider.swift */; };
-		048E69A02AFCD0E60082103B /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047858A12AE0ED0F0072D7BB /* AppIntent.swift */; };
-		048E69A12AFCD0E80082103B /* ChangeBackgroundIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9D0A72AE668E7003A773E /* ChangeBackgroundIntent.swift */; };
-		048E69A22AFCD0EA0082103B /* SingleRoutineButtonIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E230BE2AEBAD61009C3ED3 /* SingleRoutineButtonIntent.swift */; };
-		048E69A32AFCD0EC0082103B /* RandomRoutinButtonIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485B9262AF0926A00169C27 /* RandomRoutinButtonIntent.swift */; };
-		048E69A42AFCD0F00082103B /* AppIntity+Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485B9232AF0907D00169C27 /* AppIntity+Query.swift */; };
-		048E69A52AFCD0F20082103B /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DAE1C22AE6080100EAC5EB /* PlaceholderView.swift */; };
-		048E69A62AFCD0F40082103B /* BackgroudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DAE1C62AE608B800EAC5EB /* BackgroudView.swift */; };
-		048E69A72AFCD0F60082103B /* CheckListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9D0962AE65AF6003A773E /* CheckListView.swift */; };
-		048E69A82AFCD0F80082103B /* WallPaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9D0A12AE66582003A773E /* WallPaperView.swift */; };
-		048E69AA2AFCD5D80082103B /* sample-3s.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 048E69A92AFCD5D80082103B /* sample-3s.mp3 */; };
 		048E69AB2AFCD5D80082103B /* sample-3s.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 048E69A92AFCD5D80082103B /* sample-3s.mp3 */; };
 		04B9D08B2AE622DE003A773E /* WDConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9D08A2AE622DE003A773E /* WDConstant.swift */; };
 		04B9D08E2AE623CB003A773E /* WDFolderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9D08D2AE623CB003A773E /* WDFolderType.swift */; };
@@ -59,7 +46,6 @@
 		04B9D0A92AE668E7003A773E /* ChangeBackgroundIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9D0A72AE668E7003A773E /* ChangeBackgroundIntent.swift */; };
 		04D502262AE22B3200EE1C81 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D502252AE22B3200EE1C81 /* WeatherView.swift */; };
 		04DAE1C42AE6083A00EAC5EB /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DAE1C22AE6080100EAC5EB /* PlaceholderView.swift */; };
-		04DAE1C52AE6086F00EAC5EB /* ImageDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047858B32AE11CEB0072D7BB /* ImageDataViewModel.swift */; };
 		04DAE1C82AE6098100EAC5EB /* BackgroudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DAE1C62AE608B800EAC5EB /* BackgroudView.swift */; };
 		04E230C02AEBAD61009C3ED3 /* SingleRoutineButtonIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E230BE2AEBAD61009C3ED3 /* SingleRoutineButtonIntent.swift */; };
 		7E5DCF3EACDE1B87CAC4CE3A /* Pods_Wallpaper_WidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 071BBC2E1EC88B83EA44054A /* Pods_Wallpaper_WidgetExtension.framework */; };
@@ -395,9 +381,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048E69AA2AFCD5D80082103B /* sample-3s.mp3 in Resources */,
 				0478588C2AE0EC200072D7BB /* Preview Assets.xcassets in Resources */,
-				048E69952AFC7D460082103B /* file_example_MP4_480_1_5MG.mp4 in Resources */,
 				047858892AE0EC200072D7BB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,29 +450,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048E69A22AFCD0EA0082103B /* SingleRoutineButtonIntent.swift in Sources */,
 				04B9D0942AE6299C003A773E /* FolderModel.swift in Sources */,
 				04B9D08B2AE622DE003A773E /* WDConstant.swift in Sources */,
-				048E69A02AFCD0E60082103B /* AppIntent.swift in Sources */,
-				048E699F2AFCD0E40082103B /* Provider.swift in Sources */,
 				04B9D09B2AE65EDB003A773E /* WeekendDayModel.swift in Sources */,
-				048E69A62AFCD0F40082103B /* BackgroudView.swift in Sources */,
 				04D502262AE22B3200EE1C81 /* WeatherView.swift in Sources */,
 				04B9D08E2AE623CB003A773E /* WDFolderType.swift in Sources */,
 				04884E6E2AEA0428009E5766 /* WDNetworkModel.swift in Sources */,
-				048E69A82AFCD0F80082103B /* WallPaperView.swift in Sources */,
-				048E69A42AFCD0F00082103B /* AppIntity+Query.swift in Sources */,
-				048E69A32AFCD0EC0082103B /* RandomRoutinButtonIntent.swift in Sources */,
-				04DAE1C52AE6086F00EAC5EB /* ImageDataViewModel.swift in Sources */,
 				04884E652AE9F837009E5766 /* NetworkManager.swift in Sources */,
-				048E699E2AFCD0E00082103B /* SourceMakerIntent.swift in Sources */,
-				048E69A72AFCD0F60082103B /* CheckListView.swift in Sources */,
 				047858852AE0EC1E0072D7BB /* WallPaperApp.swift in Sources */,
 				046B77282AE9055300E1CC48 /* ButtonCheckListModel.swift in Sources */,
 				048E69992AFC815E0082103B /* PlayerController.swift in Sources */,
 				047858AE2AE0ED590072D7BB /* FileService.swift in Sources */,
-				048E69A52AFCD0F20082103B /* PlaceholderView.swift in Sources */,
-				048E69A12AFCD0E80082103B /* ChangeBackgroundIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,12 +477,12 @@
 				048E699D2AFC9AF30082103B /* SourceMakerIntent.swift in Sources */,
 				04B9D0A32AE66582003A773E /* WallPaperView.swift in Sources */,
 				D1ACB1542AE6B79500DAFEE9 /* WeatherView.swift in Sources */,
+				0489C48A2AFDC9BF000D14A0 /* Wallpaper_WidgetBundle.swift in Sources */,
 				04B9D0A92AE668E7003A773E /* ChangeBackgroundIntent.swift in Sources */,
 				04884E6C2AEA03F0009E5766 /* WDNetworkModel.swift in Sources */,
 				04DAE1C42AE6083A00EAC5EB /* PlaceholderView.swift in Sources */,
 				047858AF2AE0ED960072D7BB /* FileService.swift in Sources */,
 				0485B9282AF0926A00169C27 /* RandomRoutinButtonIntent.swift in Sources */,
-				0478589E2AE0ED0F0072D7BB /* Wallpaper_WidgetBundle.swift in Sources */,
 				047858A22AE0ED0F0072D7BB /* AppIntent.swift in Sources */,
 				046B77292AE91B8600E1CC48 /* ButtonCheckListModel.swift in Sources */,
 				04E230C02AEBAD61009C3ED3 /* SingleRoutineButtonIntent.swift in Sources */,

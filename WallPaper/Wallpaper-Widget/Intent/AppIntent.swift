@@ -13,10 +13,12 @@ import SwiftUI
 //@available(iOSApplicationExtension, unavailable)
 //extension ConfigurationAppIntent: ForegroundContinuableIntent { }
 
+
 @available(iOS 17.0, *)
 struct ConfigurationAppIntent: WidgetConfigurationIntent {
     static var title: LocalizedStringResource = "Configuration"
     static var description = IntentDescription("This is an example widget.")
+
 
     @Parameter(title: "Pick a image")
     var imageSrc: ImageSource

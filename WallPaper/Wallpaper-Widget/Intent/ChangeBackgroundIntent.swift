@@ -31,6 +31,7 @@ struct ChangeBackgroundIntent: AppIntent {
         self.id_name = id_name
     }
     
+    @MainActor
     func perform() async throws -> some IntentResult {
 
 //        print("DEBUG: push notifi")
