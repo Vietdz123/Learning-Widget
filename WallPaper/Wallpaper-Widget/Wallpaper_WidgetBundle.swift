@@ -28,11 +28,7 @@ struct WallpaperWidget: Widget {
             WallpaperWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
                 .onAppear {
-                    NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { notification in
-                                    print("DEBUG: zo")
-        //                            WidgetViewModel.shared.dict[entry.imgSrc.actualName]?.updateCurrentIndex()
-                                
-                                }
+
                 }
         }
         .contentMarginsDisabled()

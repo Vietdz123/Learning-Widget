@@ -10,9 +10,6 @@ import WidgetKit
 import AppIntents
 import AVFoundation
 
-//@available(iOSApplicationExtension, unavailable)
-//extension SoundMakerIntent: ForegroundContinuableIntent { }
-
 struct SoundMakerIntent: AudioPlaybackIntent {
     static var title: LocalizedStringResource = "Play a sound"
     static var description: IntentDescription = IntentDescription("Plays a widget sound")
@@ -29,8 +26,6 @@ struct SoundMakerIntent: AudioPlaybackIntent {
     func perform() async throws -> some IntentResult {
         print("DEBUG: goto SoundMakerIntent")
         
-//        WidgetViewModel.shared.dict[id_name]?.updateCurrentIndex()
-//        SoundPlayer.shared.name = id_name
         SoundPlayer.shared.play()
         
         return .result()
