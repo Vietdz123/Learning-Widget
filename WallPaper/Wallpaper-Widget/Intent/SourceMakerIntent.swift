@@ -41,13 +41,19 @@ class SoundPlayer: NSObject {
     
     func play() {
         print("DEBUG: siuuuu")
-        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
-        try? AVAudioSession.sharedInstance().setActive(true)
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            print("DEBUG: success")
+        } catch {
+            print("DEBUG: \(error.localizedDescription) error")
+        }
 
         
 //        guard let player = try? AVAudioPlayer(contentsOf: URL(string: "https://samplelib.com/lib/preview/mp3/sample-3s.mp3")!) else { print("DEBUG: return cmnr"); return }
         print("DEBUG: goto play")
-        player.replaceCurrentItem(with: AVPlayerItem(url: URL(string: "https://samplelib.com/lib/preview/mp3/sample-3s.mp3")!))
+        player.replaceCurrentItem(with: AVPlayerItem(url: ))
 //        NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil)
 //        WidgetViewModel.shared.dict[name]?.updateCurrentIndex()
         player.play()
