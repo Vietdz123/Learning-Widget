@@ -34,7 +34,6 @@ class WDNetworkManager {
                 guard let data = data else { completion(false); return }
                 
                 do {
-                    print("DEBUG: \(try? JSONSerialization.jsonObject(with: data))")
                     let response = try JSONDecoder().decode(EztWidgetResponse.self, from: data)
                     
                     response.data.data.forEach { ezWidget in
@@ -50,7 +49,7 @@ class WDNetworkManager {
 
                 } catch {
                     print("DEBUG: \(error.localizedDescription) fdfds")
-                    DispatchQueue.main.async { completion(false) }
+                    completion(false)
                 }
             }
 
@@ -64,11 +63,10 @@ class WDNetworkManager {
         let foldername = "\(folderType.nameId) \(data.id)"
         
         let existCate = CoreDataService.shared.getCategory(name: foldername)
-        if let existCate = existCate {
-            if let items = existCate.items {
-                existCate.removeFromItems(items)
-            }
-            
+        if let existCate = existCate, let items = existCate.items, items.count != 0 {
+            print("DEBUG: \(items.count) items")
+            existCate.removeFromItems(items)
+
             self.context.delete(existCate)
         }
         
@@ -123,7 +121,6 @@ class WDNetworkManager {
                 category.addToItems(item)
                 self.saveContext()
                 
-                
                 dispathGroup.leave()
                 
             }.resume()
@@ -162,7 +159,8 @@ extension WDNetworkManager {
                 
             } catch {
                 let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                print("DEBUG: error savecontext \(error.localizedDescription)")
+//                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
     }

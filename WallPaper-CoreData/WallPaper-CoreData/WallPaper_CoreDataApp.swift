@@ -14,7 +14,7 @@ struct WallPaper_CoreDataApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            InstagramView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .onAppear {
                     let audioSession = AVAudioSession.sharedInstance()
@@ -25,6 +25,18 @@ struct WallPaper_CoreDataApp: App {
                     } catch let error as NSError {
                         print("Setting category to AVAudioSessionCategoryPlayback failed: \(error)")
                     }
+                }
+                .onOpenURL { instagramUrl in
+                    DispatchQueue.main.async {
+                        print("DEBUG: siuuu123")
+                        if UIApplication.shared.canOpenURL(instagramUrl) {
+                          UIApplication.shared.open(instagramUrl)
+                        } else {
+                          //redirect to safari because the user doesn't have Instagram
+                          UIApplication.shared.open(URL(string: "http://instagram.com/")!)
+                        }
+                    }
+      
                 }
         }
     }

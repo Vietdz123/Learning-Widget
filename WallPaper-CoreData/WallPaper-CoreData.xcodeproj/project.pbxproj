@@ -62,6 +62,7 @@
 		0485EB252B01CC3F00C2C6DF /* CategoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485EB242B01CC3F00C2C6DF /* CategoryExtension.swift */; };
 		0485EB272B01CCEA00C2C6DF /* ItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485EB262B01CCEA00C2C6DF /* ItemExtension.swift */; };
 		0485EB292B01D6AF00C2C6DF /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485EB282B01D6AF00C2C6DF /* DataController.swift */; };
+		04A3921C2B0B0BF10061A573 /* InstagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3921B2B0B0BF10061A573 /* InstagramView.swift */; };
 		04C6B78B2B071DF500E9ED63 /* Wallpaper_GifWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6B77D2B071D1600E9ED63 /* Wallpaper_GifWidget.swift */; };
 		04C6B78D2B071EAF00E9ED63 /* LockAppEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6B77F2B071D1600E9ED63 /* LockAppEntity.swift */; };
 		04C6B7912B07255A00E9ED63 /* WidgetBundleHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6B7672B07187D00E9ED63 /* WidgetBundleHome.swift */; };
@@ -138,6 +139,7 @@
 		0485EB242B01CC3F00C2C6DF /* CategoryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryExtension.swift; sourceTree = "<group>"; };
 		0485EB262B01CCEA00C2C6DF /* ItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemExtension.swift; sourceTree = "<group>"; };
 		0485EB282B01D6AF00C2C6DF /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		04A3921B2B0B0BF10061A573 /* InstagramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramView.swift; sourceTree = "<group>"; };
 		04C6B7672B07187D00E9ED63 /* WidgetBundleHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBundleHome.swift; sourceTree = "<group>"; };
 		04C6B77D2B071D1600E9ED63 /* Wallpaper_GifWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallpaper_GifWidget.swift; sourceTree = "<group>"; };
 		04C6B77F2B071D1600E9ED63 /* LockAppEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockAppEntity.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				04C6B7972B07296000E9ED63 /* Info.plist */,
+				0485EAF02B01C8DB00C2C6DF /* Assets.xcassets */,
 				04C6B77A2B071D1600E9ED63 /* Wallpaper-GifWidget */,
 				04C6B7962B0728F600E9ED63 /* Home */,
 			);
@@ -262,6 +265,7 @@
 				04C6B7932B0728D700E9ED63 /* Preview Content */,
 				0485EAEC2B01C8DA00C2C6DF /* WallPaper_CoreDataApp.swift */,
 				0485EAEE2B01C8DA00C2C6DF /* ContentView.swift */,
+				04A3921B2B0B0BF10061A573 /* InstagramView.swift */,
 				048407A12B047D8500381846 /* Info.plist */,
 				0456736C2B02023C00D7B28F /* WallPaper-CoreData.entitlements */,
 				0485EB182B01CA8E00C2C6DF /* CoreData */,
@@ -354,7 +358,6 @@
 			isa = PBXGroup;
 			children = (
 				04C6B7672B07187D00E9ED63 /* WidgetBundleHome.swift */,
-				0485EAF02B01C8DB00C2C6DF /* Assets.xcassets */,
 				045673982B020FD100D7B28F /* Wallpaper_WidgetBundle.swift */,
 				045673912B02072600D7B28F /* Model-Widgets */,
 				045673902B02072100D7B28F /* Views */,
@@ -581,6 +584,7 @@
 				0485EB0E2B01CA6A00C2C6DF /* NetworkManager.swift in Sources */,
 				04845CED2B030890005ABAEB /* Item+CoreDataProperties.swift in Sources */,
 				0485EB092B01CA4600C2C6DF /* WeekendDayModel.swift in Sources */,
+				04A3921C2B0B0BF10061A573 /* InstagramView.swift in Sources */,
 				0485EB0F2B01CA6A00C2C6DF /* FileService.swift in Sources */,
 				0484079D2B046E5C00381846 /* Category+CoreDataProperties.swift in Sources */,
 				0485EB072B01CA4600C2C6DF /* FolderModel.swift in Sources */,

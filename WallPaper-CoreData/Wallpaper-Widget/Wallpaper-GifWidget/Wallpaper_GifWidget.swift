@@ -20,25 +20,25 @@ struct ProviderLock: AppIntentTimelineProvider {
     
     func timeline(for configuration: ConfigurationLockAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
         print("DEBUG: goto timeline")
-        var imageNames = ["Comp1", "Comp2", "Comp3", "Comp4", "Comp5", "Comp6", "Comp7", "Comp8", "Comp9", "Comp10", "Comp11", "Comp12", "Comp13", "Comp14", "Comp15"
-        ]
+//        var imageNames = ["Comp1", "Comp2", "Comp3", "Comp4", "Comp5", "Comp6", "Comp7", "Comp8", "Comp9", "Comp10", "Comp11", "Comp12", "Comp13", "Comp14", "Comp15"
+//        ]
+        
+        var imageNames = ["5", "6", "7", "8"]
         if GifWidgetViewModel.shared.playGif {
             var entries: [SimpleEntry] = []
             
             
             let images = imageNames
             
-            let count = Int(60 / (Double(imageNames.count) * 0.5))
+            let count = Int(60 / (Double(imageNames.count) * 2))
             
             for _ in 0 ..< count {
-                
-                
                 imageNames.append(contentsOf: images)
             }
             
             let currentDate = Date()
             for (key, name) in imageNames.enumerated() {
-                let entryDate = currentDate.addingTimeInterval(Double(key) * 0.5)
+                let entryDate = currentDate.addingTimeInterval(Double(key) * 2)
                 let entry = SimpleEntry(date: entryDate, image: UIImage(named: name)!, size: context.displaySize)
                 entries.append(entry)
             }
@@ -73,17 +73,28 @@ struct Wallpaper_GifWidgetEntryView : View {
     }
     
     var body: some View {
-        VStack {
-            Button(intent: PlayButtonIntent(id_name: "haha")) {
-                Text("\(nameButton)")
-                    .foregroundColor(.red)
-            }
+        ZStack {
+
             
             Image(uiImage: entry.image)
                 .resizable()
                 .frame(maxWidth: entry.size.width, maxHeight: entry.size.height)
-      
+    
+            HStack(alignment: .center, spacing: 8) {
+                Button(intent: PlayButtonIntent(id_name: "haha")) {
+                    Text("\(nameButton)")
+                        .foregroundColor(.red)
+                }
+                
+                Link(destination: URL(string: "instagram://user")!,
+                     label: {
+                    Text("Open Instagram")
+                })
+            }
+            
+
         }
+
     }
 }
 
@@ -95,6 +106,8 @@ struct Wallpaper_GifWidget: Widget {
             Wallpaper_GifWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
+        .contentMarginsDisabled()
+        .supportedFamilies([ .systemMedium ])
     }
 }
 
@@ -112,3 +125,10 @@ extension ConfigurationLockAppIntent {
     }
 }
 
+class GifWidgetViewModel {
+    
+    static let shared = GifWidgetViewModel()
+    
+    var playGif = false
+    
+}

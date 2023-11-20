@@ -34,10 +34,3 @@ struct PlayButtonIntent: AppIntent {
     
 }
 
-class GifWidgetViewModel {
-    
-    static let shared = GifWidgetViewModel()
-    
-    var playGif = false
-    
-}
