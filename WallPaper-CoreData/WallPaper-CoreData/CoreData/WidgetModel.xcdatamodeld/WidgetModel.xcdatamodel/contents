@@ -9,6 +9,7 @@
         <attribute name="isCheckedRoutine" optional="YES" attributeType="Transformable" valueTransformerName="ArrayBoolTransformer"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="routineType" optional="YES" attributeType="String"/>
+        <attribute name="soundType" optional="YES" attributeType="String"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item"/>
     </entity>
     <entity name="Item" representedClassName="Item" syncable="YES">

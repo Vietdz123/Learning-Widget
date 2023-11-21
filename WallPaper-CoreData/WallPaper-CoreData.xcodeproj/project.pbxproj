@@ -37,11 +37,12 @@
 		045673C92B0222C600D7B28F /* RandomRoutinButtonIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045673C52B0222C600D7B28F /* RandomRoutinButtonIntent.swift */; };
 		045673CA2B0222C600D7B28F /* SourceMakerIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045673C62B0222C600D7B28F /* SourceMakerIntent.swift */; };
 		045673CB2B0222C600D7B28F /* SingleRoutineButtonIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045673C72B0222C600D7B28F /* SingleRoutineButtonIntent.swift */; };
+		0475C1852B0C8EF3002DD99D /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C1832B0C8EF3002DD99D /* Category+CoreDataProperties.swift */; };
+		0475C1862B0C8EF3002DD99D /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C1832B0C8EF3002DD99D /* Category+CoreDataProperties.swift */; };
+		0475C1872B0C8EF3002DD99D /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C1842B0C8EF3002DD99D /* Category+CoreDataClass.swift */; };
+		0475C1882B0C8EF3002DD99D /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C1842B0C8EF3002DD99D /* Category+CoreDataClass.swift */; };
+		0475C18B2B0C90E5002DD99D /* ExtensionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475C1892B0C90E5002DD99D /* ExtensionProvider.swift */; };
 		047D4E882B05CA9400CD0A10 /* SourceMakerIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045673C62B0222C600D7B28F /* SourceMakerIntent.swift */; };
-		0484079D2B046E5C00381846 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0484079C2B046DA500381846 /* Category+CoreDataProperties.swift */; };
-		0484079E2B046E5C00381846 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0484079B2B046DA500381846 /* Category+CoreDataClass.swift */; };
-		0484079F2B046E5C00381846 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0484079C2B046DA500381846 /* Category+CoreDataProperties.swift */; };
-		048407A02B046E5C00381846 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0484079B2B046DA500381846 /* Category+CoreDataClass.swift */; };
 		048407AA2B04A99000381846 /* ImageDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045673BE2B02228500D7B28F /* ImageDataViewModel.swift */; };
 		04845CE92B030890005ABAEB /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04845CE72B03087D005ABAEB /* Item+CoreDataProperties.swift */; };
 		04845CEA2B030890005ABAEB /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04845CE62B03087D005ABAEB /* Item+CoreDataClass.swift */; };
@@ -118,8 +119,9 @@
 		045673C52B0222C600D7B28F /* RandomRoutinButtonIntent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomRoutinButtonIntent.swift; sourceTree = "<group>"; };
 		045673C62B0222C600D7B28F /* SourceMakerIntent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceMakerIntent.swift; sourceTree = "<group>"; };
 		045673C72B0222C600D7B28F /* SingleRoutineButtonIntent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleRoutineButtonIntent.swift; sourceTree = "<group>"; };
-		0484079B2B046DA500381846 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0484079C2B046DA500381846 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0475C1832B0C8EF3002DD99D /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0475C1842B0C8EF3002DD99D /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0475C1892B0C90E5002DD99D /* ExtensionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionProvider.swift; sourceTree = "<group>"; };
 		048407A12B047D8500381846 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		04845CE62B03087D005ABAEB /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		04845CE72B03087D005ABAEB /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				045673A12B02101900D7B28F /* Provider.swift */,
+				0475C1892B0C90E5002DD99D /* ExtensionProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -309,8 +312,8 @@
 		0485EB182B01CA8E00C2C6DF /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				0484079B2B046DA500381846 /* Category+CoreDataClass.swift */,
-				0484079C2B046DA500381846 /* Category+CoreDataProperties.swift */,
+				0475C1842B0C8EF3002DD99D /* Category+CoreDataClass.swift */,
+				0475C1832B0C8EF3002DD99D /* Category+CoreDataProperties.swift */,
 				04845CE62B03087D005ABAEB /* Item+CoreDataClass.swift */,
 				04845CE72B03087D005ABAEB /* Item+CoreDataProperties.swift */,
 				0485EAFA2B01C8FD00C2C6DF /* WidgetModel.xcdatamodeld */,
@@ -552,11 +555,12 @@
 				045673A92B0210BD00D7B28F /* WDNetworkModel.swift in Sources */,
 				045673A22B02101900D7B28F /* Provider.swift in Sources */,
 				045673942B02074900D7B28F /* AppIntity+Query.swift in Sources */,
-				048407A02B046E5C00381846 /* Category+CoreDataClass.swift in Sources */,
 				045673BF2B02228500D7B28F /* ImageDataViewModel.swift in Sources */,
 				04845CE92B030890005ABAEB /* Item+CoreDataProperties.swift in Sources */,
 				045673CA2B0222C600D7B28F /* SourceMakerIntent.swift in Sources */,
+				0475C1882B0C8EF3002DD99D /* Category+CoreDataClass.swift in Sources */,
 				045673A42B02105900D7B28F /* DataController.swift in Sources */,
+				0475C18B2B0C90E5002DD99D /* ExtensionProvider.swift in Sources */,
 				0456739A2B020FD100D7B28F /* Wallpaper_WidgetBundle.swift in Sources */,
 				04845CEA2B030890005ABAEB /* Item+CoreDataClass.swift in Sources */,
 				045673892B0206E200D7B28F /* WidgetModel.xcdatamodeld in Sources */,
@@ -564,8 +568,8 @@
 				045673A52B02105C00D7B28F /* ItemExtension.swift in Sources */,
 				045673AA2B0210BD00D7B28F /* ButtonCheckListModel.swift in Sources */,
 				045673A62B02105E00D7B28F /* CategoryExtension.swift in Sources */,
-				0484079F2B046E5C00381846 /* Category+CoreDataProperties.swift in Sources */,
 				0456739E2B020FFF00D7B28F /* PlaceholderView.swift in Sources */,
+				0475C1862B0C8EF3002DD99D /* Category+CoreDataProperties.swift in Sources */,
 				045673C82B0222C600D7B28F /* ChangeBackgroundIntent.swift in Sources */,
 				045673AB2B0210BD00D7B28F /* FolderModel.swift in Sources */,
 				04C6B7912B07255A00E9ED63 /* WidgetBundleHome.swift in Sources */,
@@ -584,18 +588,18 @@
 				0485EB0E2B01CA6A00C2C6DF /* NetworkManager.swift in Sources */,
 				04845CED2B030890005ABAEB /* Item+CoreDataProperties.swift in Sources */,
 				0485EB092B01CA4600C2C6DF /* WeekendDayModel.swift in Sources */,
+				0475C1852B0C8EF3002DD99D /* Category+CoreDataProperties.swift in Sources */,
 				04A3921C2B0B0BF10061A573 /* InstagramView.swift in Sources */,
 				0485EB0F2B01CA6A00C2C6DF /* FileService.swift in Sources */,
-				0484079D2B046E5C00381846 /* Category+CoreDataProperties.swift in Sources */,
 				0485EB072B01CA4600C2C6DF /* FolderModel.swift in Sources */,
 				04845CEE2B030890005ABAEB /* Item+CoreDataClass.swift in Sources */,
 				047D4E882B05CA9400CD0A10 /* SourceMakerIntent.swift in Sources */,
+				0475C1872B0C8EF3002DD99D /* Category+CoreDataClass.swift in Sources */,
 				045673962B02088500D7B28F /* CoreDataService.swift in Sources */,
 				0485EB0B2B01CA5200C2C6DF /* WDConstant.swift in Sources */,
 				0485EAEF2B01C8DA00C2C6DF /* ContentView.swift in Sources */,
 				0485EB292B01D6AF00C2C6DF /* DataController.swift in Sources */,
 				0485EB062B01CA4600C2C6DF /* WDFolderType.swift in Sources */,
-				0484079E2B046E5C00381846 /* Category+CoreDataClass.swift in Sources */,
 				0485EB252B01CC3F00C2C6DF /* CategoryExtension.swift in Sources */,
 				0485EAED2B01C8DA00C2C6DF /* WallPaper_CoreDataApp.swift in Sources */,
 				0485EAFC2B01C8FD00C2C6DF /* WidgetModel.xcdatamodeld in Sources */,

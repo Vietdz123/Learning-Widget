@@ -43,6 +43,13 @@ struct ImageSource: AppEntity {
         
     }
     
+    func getSoundType() -> SoundType {
+        guard let cate = getCategory() else { return .circle }
+        
+        return CoreDataService.shared.getSoundType(with: cate.unwrappedSoundType)
+        
+    }
+    
     func getFolderType() -> WDFolderType {
         guard let cate = getCategory() else { return .placeholder }
         
@@ -58,20 +65,6 @@ struct ImageSource: AppEntity {
     
     static func getSuggested() -> [ImageSource] {
         
-//        WidgetCenter.shared.getCurrentConfigurations { info in
-//            switch info {
-//            case .success(let success):
-//                
-//                success.forEach { info in
-//                    print("DEBUG: \(info.family) family")
-//                }
-//            case .failure:
-//                print("DEBUG: error family")
-//            }
-//        }
-        
-        
-        
         return CoreDataService.shared.getSuggestedName().map { name in
             return ImageSource(id: name, actualName: name)
         }
@@ -82,7 +75,6 @@ struct ImageSource: AppEntity {
             return ImageSource(id: name, actualName: name)
         }
         
-
         src.append(ImageSource.defaultValue)
         return src
     }

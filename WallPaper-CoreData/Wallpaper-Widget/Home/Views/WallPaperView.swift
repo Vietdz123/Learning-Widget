@@ -28,7 +28,7 @@ struct WallpaperWidgetEntryView : View {
 
         switch entry.type {
             
-        case .digitalFriend:
+        case .digitalFriend, .sound:
             BackgroudView(entry: entry)
         case .routineMonitor:
             CheckListView(entry: entry)

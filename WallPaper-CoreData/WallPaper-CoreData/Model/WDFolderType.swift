@@ -33,7 +33,9 @@ enum WDFolderType: String, CaseIterable {
     
     case digitalFriend = "Digital Friend"
     case routineMonitor = "Routine Monitor"
+    case sound = "Sounds"
     case placeholder = "placeholder"
+   
     
     var nameId: String {
         return self.rawValue
@@ -51,6 +53,8 @@ enum WDFolderType: String, CaseIterable {
         
     }
 }
+
+
 
 enum RoutinMonitorType: String, CaseIterable {
     
@@ -71,6 +75,31 @@ enum RoutinMonitorType: String, CaseIterable {
         }
         
         return .single
+        
+    }
+    
+}
+
+
+enum SoundType: String, CaseIterable {
+    
+    case circle = "sound_circle"
+    case makeDesicion = "sound_make_decision"
+    case twoImage = "sound_two_image"
+    
+    var nameId: String {
+        return self.rawValue
+    }
+    
+    static func getType(name: String) -> SoundType {
+        
+        for folderType in SoundType.allCases {
+            if folderType.nameId == name {
+                return folderType
+            }
+        }
+        
+        return .circle
         
     }
     

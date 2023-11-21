@@ -73,6 +73,10 @@ class CoreDataService {
         return RoutinMonitorType.getType(name: nameRoutine)
     }
     
+    func getSoundType(with nameSound: String) -> SoundType {
+        return SoundType.getType(name: nameSound)
+    }
+    
     func getSounds(category: Category, family: FamilyFolderType) -> [URL] {
         let items = category.itemArray
         

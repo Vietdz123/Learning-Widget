@@ -1,8 +1,8 @@
 //
 //  Category+CoreDataClass.swift
-//  WallPaper-CoreData
+//  
 //
-//  Created by MAC on 15/11/2023.
+//  Created by MAC on 21/11/2023.
 //
 //
 

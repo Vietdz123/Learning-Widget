@@ -25,6 +25,10 @@ extension Category {
         routineType ?? "Unknown name"
     }
     
+    public var unwrappedSoundType: String {
+        soundType ?? "Unknown name"
+    }
+    
     public var itemArray: [Item] {
         
         let itemSet = items as? Set<Item> ?? []

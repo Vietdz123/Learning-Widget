@@ -64,7 +64,6 @@ class WDNetworkManager {
         
         let existCate = CoreDataService.shared.getCategory(name: foldername)
         if let existCate = existCate, let items = existCate.items, items.count != 0 {
-            print("DEBUG: \(items.count) items")
             existCate.removeFromItems(items)
 
             self.context.delete(existCate)
@@ -81,6 +80,9 @@ class WDNetworkManager {
         if folderType == .routineMonitor {
             let routineType = RoutinMonitorType.getType(name: data.tags[0].name).nameId
             category.routineType = routineType
+        } else if folderType == .sound {
+            let soundType = SoundType.getType(name: data.tags[0].name).nameId
+            category.soundType = soundType
         }
         
         var widgetPath = data.path

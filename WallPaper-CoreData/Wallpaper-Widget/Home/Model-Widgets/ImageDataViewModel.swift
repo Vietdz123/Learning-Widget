@@ -72,7 +72,11 @@ class ImageDataViewModel {
         return self.images.count == 0 ? UIImage(named: AssetConstant.imagePlacehodel)! : images[currentIndex]
     }
 
-    
+    var randomImage: UIImage {
+        
+        return self.images.count == 0 ? UIImage(named: AssetConstant.imagePlacehodel)! : images.shuffled().first!
+        
+    }
 }
 
 

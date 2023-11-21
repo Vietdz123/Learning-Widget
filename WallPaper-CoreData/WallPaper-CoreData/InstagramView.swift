@@ -24,10 +24,6 @@ struct InstagramView: View {
                 }, label: {
                     Text("Open instagram")
                 })
-                
-                
-                
-                
             }
             
             NavigationLink {

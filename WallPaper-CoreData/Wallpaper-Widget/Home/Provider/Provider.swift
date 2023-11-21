@@ -12,7 +12,6 @@ import UIKit
 @available(iOS 17.0, *)
 struct Provider: AppIntentTimelineProvider {
     
-    
     func placeholder(in context: Context) -> SourceImageEntry {
         print("DEBUG: goto placeholder")
         return SourceImageEntry(date: .now, image: UIImage(named: AssetConstant.imagePlacehodel)!, size: context.displaySize, type: .placeholder, btnChecklistModel: ButtonCheckListModel(), imgViewModel: ImageDataViewModel(), imgSrc: ImageSource(id: "img", actualName: "img"), routineType: .single)
@@ -36,14 +35,9 @@ struct Provider: AppIntentTimelineProvider {
             imgSrc.images = configuration.imageSrc.getImages(family: .square)
         case .systemMedium:
             imgSrc.images = configuration.imageSrc.getImages(family: .rectangle)
-        
-        case .accessoryCircular, .accessoryInline, .accessoryRectangular:
-            imgSrc.images = configuration.imageSrc.getImages(family: .rectangle)
         default:
             imgSrc.images = []
         }
-        
-        print("DEBUG: \(imgSrc.category?.currentIndexDigitalFriend) currentIndexDigitalFriend")
         
         if imgSrc.category?.hasSound == true {
             imgSrc.updateCurrentIndex()
@@ -61,11 +55,11 @@ struct Provider: AppIntentTimelineProvider {
         let entry1 = SourceImageEntry(date: .now,
                                       image: image,
                                       size: size,
-                                     type: type,
-                                     btnChecklistModel: btnCLModel,
-                                     imgViewModel: imgSrc,
-                                     imgSrc: configuration.imageSrc,
-                                     routineType: routineType)
+                                      type: type,
+                                      btnChecklistModel: btnCLModel,
+                                      imgViewModel: imgSrc,
+                                      imgSrc: configuration.imageSrc,
+                                      routineType: routineType)
         
         
         
