@@ -14,7 +14,7 @@ struct WallPaper_CoreDataApp: App {
     
     var body: some Scene {
         WindowGroup {
-            InstagramView()
+            ContentView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .onAppear {
                     let audioSession = AVAudioSession.sharedInstance()

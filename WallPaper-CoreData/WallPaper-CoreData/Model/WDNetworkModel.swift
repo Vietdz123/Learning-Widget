@@ -20,13 +20,14 @@ struct WidgetData: Codable {
 
 struct EztWidget: Codable {
     let id: Int
-    let thumbnail: [Thumbnail]
+    let thumbnail: [Thumbnail]?
     let sound: [WidgetSound]?
     let path: [WidgetPath]
     let category_id: Int
     let is_trend: Int
     let is_private: Int
     let order: Int
+    let delay_animation: Int
     let active: Int
     let download: Int
     let rating: Int

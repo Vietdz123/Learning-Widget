@@ -18,10 +18,6 @@ struct ContentView: View {
             }, label: {
                 Text("Load Data")
             })
-
-            
-            
-
             
         }
         .padding()

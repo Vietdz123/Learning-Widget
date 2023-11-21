@@ -34,6 +34,7 @@ class WDNetworkManager {
                 guard let data = data else { completion(false); return }
                 
                 do {
+                    print("DEBUG: \(try? JSONSerialization.jsonObject(with: data))")
                     let response = try JSONDecoder().decode(EztWidgetResponse.self, from: data)
                     
                     response.data.data.forEach { ezWidget in
@@ -76,6 +77,7 @@ class WDNetworkManager {
         category.currentCheckImageRoutine = Array(repeating: 0, count: 7)
         category.isCheckedRoutine = Array(repeating: false, count: 7)
         category.hasSound = false
+        category.shouldPlaySound = true
         
         if folderType == .routineMonitor {
             let routineType = RoutinMonitorType.getType(name: data.tags[0].name).nameId
@@ -83,6 +85,8 @@ class WDNetworkManager {
         } else if folderType == .sound {
             let soundType = SoundType.getType(name: data.tags[0].name).nameId
             category.soundType = soundType
+        } else if folderType == .gif {
+            category.delayAnimation = Double(data.delay_animation / 1000)
         }
         
         var widgetPath = data.path
@@ -149,6 +153,8 @@ extension WDNetworkManager {
         components.queryItems = [
             URLQueryItem(name: "with", value: WDNetworkManagerConstant.query),
             URLQueryItem(name: "limit", value: "\(100)"),
+            URLQueryItem(name: "where", value: "active+0"),
+            URLQueryItem(name: "dev", value: "1"),
         ]
         
         return components.url

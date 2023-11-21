@@ -27,8 +27,7 @@ struct WallpaperWidgetEntryView : View {
     var body: some View {
 
         switch entry.type {
-            
-        case .digitalFriend, .sound:
+        case .digitalFriend, .sound, .gif:
             BackgroudView(entry: entry)
         case .routineMonitor:
             CheckListView(entry: entry)

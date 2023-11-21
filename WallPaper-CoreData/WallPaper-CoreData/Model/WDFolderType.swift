@@ -34,6 +34,7 @@ enum WDFolderType: String, CaseIterable {
     case digitalFriend = "Digital Friend"
     case routineMonitor = "Routine Monitor"
     case sound = "Sounds"
+    case gif = "Gif"
     case placeholder = "placeholder"
    
     
