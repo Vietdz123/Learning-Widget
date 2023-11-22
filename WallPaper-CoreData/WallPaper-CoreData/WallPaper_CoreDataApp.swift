@@ -28,7 +28,6 @@ struct WallPaper_CoreDataApp: App {
                 }
                 .onOpenURL { instagramUrl in
                     DispatchQueue.main.async {
-                        print("DEBUG: siuuu123")
                         if UIApplication.shared.canOpenURL(instagramUrl) {
                           UIApplication.shared.open(instagramUrl)
                         } else {

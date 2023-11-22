@@ -34,7 +34,6 @@ class WDNetworkManager {
                 guard let data = data else { completion(false); return }
                 
                 do {
-                    print("DEBUG: \(try? JSONSerialization.jsonObject(with: data))")
                     let response = try JSONDecoder().decode(EztWidgetResponse.self, from: data)
                     
                     response.data.data.forEach { ezWidget in
@@ -77,7 +76,7 @@ class WDNetworkManager {
         category.currentCheckImageRoutine = Array(repeating: 0, count: 7)
         category.isCheckedRoutine = Array(repeating: false, count: 7)
         category.hasSound = false
-        category.shouldPlaySound = true
+        category.shouldPlaySound = false
         
         if folderType == .routineMonitor {
             let routineType = RoutinMonitorType.getType(name: data.tags[0].name).nameId
@@ -86,7 +85,7 @@ class WDNetworkManager {
             let soundType = SoundType.getType(name: data.tags[0].name).nameId
             category.soundType = soundType
         } else if folderType == .gif {
-            category.delayAnimation = Double(data.delay_animation / 1000)
+            category.delayAnimation = Double(data.delay_animation) / 1000.0
         }
         
         var widgetPath = data.path
@@ -95,7 +94,6 @@ class WDNetworkManager {
                 return WidgetPath(file_name: sound.file_name, key_type: sound.key_type, type_file: sound.type_file, url: sound.url)
             } + data.path
             category.hasSound = !sounds.isEmpty
-            print("DEBUG: sounds")
         }
 
         for (index, path) in widgetPath.enumerated()  {
@@ -105,7 +103,7 @@ class WDNetworkManager {
             let familyType = FamilyFolderType.getType(name: path.key_type)
             let item = Item(context: context)
             item.family = familyType.rawValue
-            item.creationDate = Date().timeIntervalSinceNow + Double(10000 * index)
+            item.creationDate = Date().timeIntervalSinceNow + Double(1000 * index)
             item.name = path.file_name
             item.routine_type = (folderType == .routineMonitor) ? RoutinMonitorType.getType(name: data.tags[0].name).nameId : nil
             
@@ -188,7 +186,6 @@ extension WDNetworkManager {
             dispathGroup.enter()
             
             let familyType = FamilyFolderType.getType(name: path.key_type)
-            
             
             guard let url = URL(string: path.url.full),
                   let file = FileService.relativePath(with: "\(folderType.nameId)-\(folderName)")?.appendingPathComponent(familyType.rawValue).appendingPathComponent("\(path.file_name)")

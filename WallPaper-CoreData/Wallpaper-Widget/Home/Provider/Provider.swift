@@ -27,27 +27,30 @@ struct Provider: AppIntentTimelineProvider {
         
         print("DEBUG: goto timeline ")
          
-        let imgSrc = WidgetViewModel.shared.dict[configuration.imageSrc.actualName] ?? ImageDataViewModel()
+        let viewModel = WidgetViewModel.shared.dict[configuration.imageSrc.actualName] ?? ImageDataViewModel()
+        let folderType = configuration.imageSrc.getFolderType()
         
-        imgSrc.loadData(category: configuration.imageSrc.getCategory())
+        viewModel.loadData(category: configuration.imageSrc.getCategory())
         switch context.family {
         case .systemSmall, .systemLarge:
-            imgSrc.images = configuration.imageSrc.getImages(family: .square)
+            viewModel.images = configuration.imageSrc.getImages(family: .square)
         case .systemMedium:
-            imgSrc.images = configuration.imageSrc.getImages(family: .rectangle)
+            viewModel.images = configuration.imageSrc.getImages(family: .rectangle)
         default:
-            imgSrc.images = []
+            viewModel.images = []
         }
-
-        if imgSrc.category?.hasSound == true {
-            let timeline = getProviderSounds(viewModel: imgSrc, configuration: configuration, size: context.displaySize)
-            return timeline
-        } else {
-            let timeline = getProviderDigitalAndRoutine(viewModel: imgSrc, configuration: configuration, size: context.displaySize)
-            return timeline
-        }
-
         
+        switch folderType {
+        case .digitalFriend, .routineMonitor, .placeholder:
+            let provider = getProviderDigitalAndRoutine(viewModel: viewModel, configuration: configuration, size: context.displaySize)
+            return provider
+        case .sound:
+            let provider = getProviderSounds(viewModel: viewModel, configuration: configuration, size: context.displaySize)
+            return provider
+        case .gif:
+            let provider = getProviderGif(viewModel: viewModel, configuration: configuration, size: context.displaySize)
+            return provider
+        }
         
     }
 }

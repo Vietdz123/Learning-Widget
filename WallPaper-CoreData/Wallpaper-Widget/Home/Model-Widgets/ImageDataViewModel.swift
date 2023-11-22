@@ -8,10 +8,9 @@
 import SwiftUI
 
 enum UpdateCurrentType {
-    
+
     case reset
     case plus
-    
 }
 
 class ImageDataViewModel {
@@ -30,6 +29,10 @@ class ImageDataViewModel {
     }
     var category: Category?
     
+    var shouldPlaySound: Bool {
+        return category?.shouldPlaySound ?? true
+    }
+    
     func loadData(category: Category?) {
         guard let category = category else { return }
         self.category = category
@@ -47,22 +50,26 @@ class ImageDataViewModel {
         }
     }
     
+    func toggleShouldPlaySound() {
+        category?.shouldPlaySound.toggle()
+        CoreDataService.shared.saveContext()
+    }
+    
      func updateCurrentIndex()  {
-         if images.count == 0 { return SoundPlayer.shared.updateStatus = .reset }
+         guard let category1 = category else { return }
+         if images.count <= 0 { return SoundPlayer.shared.updateStatus = .reset }
         
         if currentIndex < images.count - 1 {
             category?.currentIndexDigitalFriend += 1
-     
             SoundPlayer.shared.updateStatus = .plus
-        } else {
-            category?.currentIndexDigitalFriend = 0
-            CoreDataService.shared.saveContext()
             
+        } else {
+            
+            category?.currentIndexDigitalFriend = 0
             SoundPlayer.shared.updateStatus = .reset
         }
          
          CoreDataService.shared.saveContext()
-         
     }
     
     var currentImage: UIImage {

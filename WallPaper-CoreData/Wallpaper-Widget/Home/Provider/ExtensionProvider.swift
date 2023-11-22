@@ -20,7 +20,6 @@ extension Provider {
         
         let image = viewModel.currentImage
         let type = configuration.imageSrc.getFolderType()
-        let size = size
         let btnCLModel = configuration.imageSrc.getButtonChecklistModel()
         let routineType = configuration.imageSrc.getRoutineType()
         WidgetViewModel.shared.dict[configuration.imageSrc.actualName]?.checkedImages = btnCLModel.checkImage
@@ -60,11 +59,11 @@ extension Provider {
         case .twoImage:
             viewModel.updateCurrentIndex()
             image = viewModel.currentImage
+            viewModel.toggleShouldPlaySound()
         }
         
         
         let type = configuration.imageSrc.getFolderType()
-        let size = size
         let btnCLModel = configuration.imageSrc.getButtonChecklistModel()
         let routineType = configuration.imageSrc.getRoutineType()
         
@@ -78,11 +77,15 @@ extension Provider {
                                           routineType: routineType)
         entries.append(firstEntry)
         
+        
         if soundType == .circle {
+            var count: Double = 1
+            
             while SoundPlayer.shared.updateStatus == .plus {
                 viewModel.updateCurrentIndex()
+                count += 1
                 
-                let entryDate = Date().addingTimeInterval(0.15)
+                let entryDate = Date().addingTimeInterval(1 * count)
                 let image = viewModel.currentImage
                 let entry = SourceImageEntry(date: entryDate,
                                               image: image,
@@ -107,32 +110,32 @@ extension Provider {
         
         var entries: [SourceImageEntry] = []
         
-        let image = viewModel.currentImage
         let type = configuration.imageSrc.getFolderType()
-        let size = size
         let btnCLModel = configuration.imageSrc.getButtonChecklistModel()
         let routineType = configuration.imageSrc.getRoutineType()
         
-        var images = viewModel.images
+        let images = viewModel.images
+        
+        var imageForTimeline: [UIImage] = []
         let delayAnimation = viewModel.category?.delayAnimation ?? 1
         
-        let count = Int(60 / (Double(images.count) * delayAnimation)) - 1
+        let count = Int(60 / (Double(images.count) * (delayAnimation == 0 ? 1 : delayAnimation)))
         
         for _ in 0 ..< count {
-            images.append(contentsOf: images)
+            imageForTimeline.append(contentsOf: images)
         }
         
         let currentDate = Date()
-        for (key, image) in images.enumerated() {
+        for (key, image) in imageForTimeline.enumerated() {
             let entryDate = currentDate.addingTimeInterval(Double(key) * delayAnimation)
             let entry = SourceImageEntry(date: entryDate,
-                                          image: image,
-                                          size: size,
-                                          type: type,
-                                          btnChecklistModel: btnCLModel,
-                                          imgViewModel: viewModel,
-                                          imgSrc: configuration.imageSrc,
-                                          routineType: routineType)
+                                         image: image,
+                                         size: size,
+                                         type: type,
+                                         btnChecklistModel: btnCLModel,
+                                         imgViewModel: viewModel,
+                                         imgSrc: configuration.imageSrc,
+                                         routineType: routineType)
             entries.append(entry)
         }
         

@@ -19,10 +19,8 @@ class CoreDataService {
         
         do {
             let categories = try context.fetch(request)
-            print("DEBUG: categories \(categories.count)")
             return categories
         } catch {
-            print("Error fetching data from context \(error)")
             return []
         }
     }
@@ -37,17 +35,20 @@ class CoreDataService {
     func getImages(category: Category, family: FamilyFolderType) -> [UIImage] {
         
         let items = category.itemArray
+        var images: [UIImage] = []
         
-        let filterItems = items.filter { item in
-            return item.unwrappedFamily.contains(family.rawValue)
+        var filterItems = items.filter { item in
+            return item.unwrappedFamily == family.rawValue
         }
         
-        print("DEBUG: \(filterItems.count) filterItems and \(category.unwrappedName) and \(category.itemArray.count)")
-        var images: [UIImage] = []
+        filterItems = filterItems.sorted { $0.creationDate < $1.creationDate }
+
         filterItems.forEach { item in
             guard let image = FileService.shared.readImage(with: category.unwrappedName, item: item) else { return }
             images.append(image)
+
         }
+        
         
         return images
     }
@@ -59,13 +60,12 @@ class CoreDataService {
         let request: NSFetchRequest<Category> = Category.fetchRequest()
         request.predicate = query
         
-        guard let category = try? context.fetch(request).first else { print("DEBUG: init category");  return nil }
+        guard let category = try? context.fetch(request).first else { return nil }
         return category
         
     }
     
     func getFolderType(with nameFolder: String) -> WDFolderType {
-        
         return WDFolderType.getType(name: nameFolder)
     }
     
@@ -81,7 +81,7 @@ class CoreDataService {
         let items = category.itemArray
         
         let filterItems = items.filter { item in
-            return item.unwrappedFamily.contains(family.rawValue)
+            return item.unwrappedFamily == family.rawValue
         }
         
         var urls: [URL] = []

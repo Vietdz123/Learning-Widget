@@ -22,14 +22,12 @@ struct SoundMakerIntent: AudioPlaybackIntent {
     
     init(id_name: String) {
         self.id_name = id_name
-        
-        
     }
     
     func perform() async throws -> some IntentResult {
-        print("DEBUG: goto SoundMakerIntent")
-        guard let cate = CoreDataService.shared.getCategory(name: id_name) else { return .result() }
         
+        guard let cate = CoreDataService.shared.getCategory(name: id_name) else { return .result() }
+        print("DEBUG: \(id_name) and \(WidgetViewModel.shared.dict[id_name])")
         let urls = CoreDataService.shared.getSounds(category: cate, family: .singleSound)
         if let url = urls.first {
             SoundPlayer.shared.play(url: url)
@@ -57,26 +55,19 @@ class SoundPlayer: NSObject {
         }
         
         print("DEBUG: goto play")
-        
-//        let fakeurl = URL(string: "https://samplelib.com/lib/preview/mp3/sample-3s.mp3")!
-        if player.currentItem == nil {
-            let item = AVPlayerItem(url: url)
-            player.replaceCurrentItem(with: item)
-            observer = item.observe(\.status, options: []) { item, value in
-                switch item.status {
-                case .readyToPlay:
-                    print("DEBUG: readyToPlay")
-                    self.player.play()
-                default :
-                    print("DEBUG: failed to play")
-                }
-            }
-        } else {
-            player.seek(to: .zero)
-            player.play()
-        }
 
-        
+        let item = AVPlayerItem(url: url)
+        player.replaceCurrentItem(with: item)
+        observer = item.observe(\.status, options: []) { item, value in
+            switch item.status {
+            case .readyToPlay:
+                print("DEBUG: readyToPlay")
+                self.player.play()
+            default :
+                print("DEBUG: failed to play")
+            }
+        }
+    
         
     }
     

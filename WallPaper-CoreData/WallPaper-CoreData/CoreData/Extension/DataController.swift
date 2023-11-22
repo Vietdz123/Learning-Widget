@@ -24,6 +24,5 @@ class DataController: ObservableObject {
             }
         }
         
-        print("DEBUG: \(String(describing: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first))")
     }
 }
