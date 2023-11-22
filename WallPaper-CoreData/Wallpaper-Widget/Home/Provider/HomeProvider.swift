@@ -10,7 +10,7 @@ import WidgetKit
 import UIKit
 
 @available(iOS 17.0, *)
-struct Provider: AppIntentTimelineProvider {
+struct HomeProvider: AppIntentTimelineProvider {
     
     func placeholder(in context: Context) -> SourceImageEntry {
         print("DEBUG: goto placeholder")

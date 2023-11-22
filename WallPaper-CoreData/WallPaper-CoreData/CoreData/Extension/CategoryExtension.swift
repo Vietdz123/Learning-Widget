@@ -8,6 +8,10 @@
 import SwiftUI
 
 
+extension CategoryLock {
+    
+}
+
 extension Category {
     
     @NSManaged var currentCheckImageRoutine: [Double]

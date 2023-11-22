@@ -17,7 +17,7 @@ struct WallpaperWidget: Widget {
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind,
                                intent: ConfigurationAppIntent.self,
-                               provider: Provider()) { entry in
+                               provider: HomeProvider()) { entry in
             WallpaperWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
