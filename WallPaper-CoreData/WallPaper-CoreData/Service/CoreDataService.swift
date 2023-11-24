@@ -32,7 +32,7 @@ class CoreDataService {
         return names
     }
     
-    func getImages(category: Category, family: FamilyFolderType) -> [UIImage] {
+    func getImages(category: Category, family: FamilyHome) -> [UIImage] {
         
         let items = category.itemArray
         var images: [UIImage] = []
@@ -65,8 +65,8 @@ class CoreDataService {
         
     }
     
-    func getFolderType(with nameFolder: String) -> WDFolderType {
-        return WDFolderType.getType(name: nameFolder)
+    func getFolderType(with nameFolder: String) -> WDHomeFolderType {
+        return WDHomeFolderType.getType(name: nameFolder)
     }
     
     func getRoutineType(with nameRoutine: String) -> RoutinMonitorType {
@@ -77,7 +77,7 @@ class CoreDataService {
         return SoundType.getType(name: nameSound)
     }
     
-    func getSounds(category: Category, family: FamilyFolderType) -> [URL] {
+    func getSounds(category: Category, family: FamilyHome) -> [URL] {
         let items = category.itemArray
         
         let filterItems = items.filter { item in
@@ -98,11 +98,11 @@ class CoreDataService {
         let items = category.itemArray
         
         let checkItems = items.filter { item in
-            return item.unwrappedFamily == FamilyFolderType.check.rawValue
+            return item.unwrappedFamily == FamilyHome.check.rawValue
         }
         
         let uncheckItems = items.filter { item in
-            return item.unwrappedFamily == FamilyFolderType.uncheck.rawValue
+            return item.unwrappedFamily == FamilyHome.uncheck.rawValue
         }
         
         var checkImages: [UIImage] = []

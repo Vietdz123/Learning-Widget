@@ -12,7 +12,11 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Button(action: {
-                WDNetworkManager.shared.requestApi { _ in
+//                WDHomeNetworkManager.shared.requestApi { _ in
+//                    print("DEBUG: Done")
+//                }
+                
+                WDGifNetworkManager.shared.requestApi { _ in
                     print("DEBUG: Done")
                 }
             }, label: {

@@ -17,11 +17,13 @@
     <entity name="CategoryLock" representedClassName="CategoryLock" syncable="YES" codeGenerationType="class">
         <attribute name="creationDate" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="delayAnimation" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="folderType" optional="YES" attributeType="String"/>
+        <attribute name="familyType" optional="YES" attributeType="String"/>
         <attribute name="fontSize" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="fontType" optional="YES" attributeType="String"/>
         <attribute name="hasSound" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="lockType" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="soundType" optional="YES" attributeType="String"/>
         <attribute name="textAlignment" optional="YES" attributeType="String"/>
         <attribute name="textColor" optional="YES" attributeType="String"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item"/>

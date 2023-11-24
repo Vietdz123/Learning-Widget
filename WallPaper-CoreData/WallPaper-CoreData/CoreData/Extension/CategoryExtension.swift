@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-
-extension CategoryLock {
-    
-}
-
 extension Category {
     
     @NSManaged var currentCheckImageRoutine: [Double]
@@ -42,7 +37,7 @@ extension Category {
         }
     }
     
-    func getItemFamily(filter: FamilyFolderType) -> [Item] {
+    func getItemFamily(filter: FamilyHome) -> [Item] {
         
         let itemSet = items as? Set<Item> ?? []
         

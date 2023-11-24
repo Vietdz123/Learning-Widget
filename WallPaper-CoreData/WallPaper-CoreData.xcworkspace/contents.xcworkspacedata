@@ -2,24 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Item+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Item+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Category+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Category+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:CategoryLock+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:CategoryLock+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:WallPaper-CoreData.xcodeproj">
    </FileRef>
    <FileRef

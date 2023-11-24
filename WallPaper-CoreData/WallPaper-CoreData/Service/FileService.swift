@@ -82,8 +82,8 @@ extension FileService {
     func writeToSource(with nameFolder : String,
                        with urlImage: URL,
                        to file: URL,
-                       widgetType: WDFolderType = .digitalFriend,
-                       familySize: FamilyFolderType) {
+                       widgetType: WDHomeFolderType = .digitalFriend,
+                       familySize: FamilyHome) {
         
         guard let dataImage = try? Data(contentsOf: urlImage) else {return}
         
