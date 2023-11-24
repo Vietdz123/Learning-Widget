@@ -8,31 +8,20 @@
 import SwiftUI
 
 
-class LockViewModel {
+class RectangleViewModel {
     
     let context = DataController().container.viewContext
 
     var images: [UIImage] = []
-    var currentCheckImageRoutine: [Int] = Array(repeating: 0, count: 7)
     
-    var checkedImages: [UIImage] = []
     var currentIndex: Int {
         return Int(category?.currentIndexDigitalFriend ?? 0)
     }
-    var category: Category?
+    var category: CategoryLock?
     
-    var shouldPlaySound: Bool {
-        return category?.shouldPlaySound ?? true
-    }
-    
-    func loadData(category: Category?) {
+    func loadData(category: CategoryLock?) {
         guard let category = category else { return }
         self.category = category
-    }
-    
-    func toggleShouldPlaySound() {
-        category?.shouldPlaySound.toggle()
-        CoreDataService.shared.saveContext()
     }
     
      func updateCurrentIndex()  {
@@ -66,10 +55,10 @@ class LockViewModel {
 }
 
 
-class LockWidgetViewModel {
+class RectWidgetViewModel {
     
-    static var shared = LockWidgetViewModel()
+    static var shared = RectWidgetViewModel()
     
-    var dict: [String: LockViewModel] = [:]
+    var dict: [String: RectangleViewModel] = [:]
     
 }

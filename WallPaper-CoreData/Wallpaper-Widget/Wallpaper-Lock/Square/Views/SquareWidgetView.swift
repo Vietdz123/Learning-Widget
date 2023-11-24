@@ -9,20 +9,36 @@ import WidgetKit
 import SwiftUI
 
 
+import WidgetKit
+import SwiftUI
+
+struct SquareEntry: TimelineEntry {
+    let date: Date
+    let image: UIImage
+    let size: CGSize
+    let type: LockType
+    let imgViewModel: SquareViewModel
+    let imgSrc: SquareSource
+}
+
+@available(iOS 17.0, *)
 struct SquareWidgetView : View {
-    var entry: SquareProvider.Entry
-
-
     
+    var entry: SquareEntry
+
     var body: some View {
-        ZStack {
 
-            
-            Image(uiImage: entry.image)
-                .resizable()
-                .frame(maxWidth: entry.size.width, maxHeight: entry.size.height)
-            
-
+        switch entry.type {
+        case .gif:
+            SquareBackgroundView(entry: entry)
+        case .quotes:
+            SquareBackgroundView(entry: entry)
+        case .countdown:
+            SquareBackgroundView(entry: entry)
+        case .placeholder:
+            LockPlaceHolderView(size: entry.size)
+        default:
+            EmptyView()
         }
 
     }

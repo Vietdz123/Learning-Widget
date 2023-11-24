@@ -10,6 +10,8 @@ import SwiftUI
 
 extension CategoryLock {
     
+    @NSManaged public var currentIndexDigitalFriend: Double
+    
     public var unwrappedName: String {
         name ?? "Unknown name"
     }
@@ -21,6 +23,7 @@ extension CategoryLock {
     public var unwrappedFamily: String {
         familyType ?? "Unknown name"
     }
+    
     
     public var unwrappedTextAlignment: String {
         textAlignment ?? "Unknown name"

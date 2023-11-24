@@ -8,20 +8,33 @@
 import WidgetKit
 import SwiftUI
 
+struct RectangleEntry: TimelineEntry {
+    let date: Date
+    let image: UIImage
+    let size: CGSize
+    let type: LockType
+    let imgViewModel: RectangleViewModel
+    let imgSrc: RectSource
+}
+
+@available(iOS 17.0, *)
 struct RectangleWidgetView : View {
-    var entry: RectangleProvider.Entry
-
-
     
+    var entry: RectangleEntry
+
     var body: some View {
-        ZStack {
 
-            
-            Image(uiImage: entry.image)
-                .resizable()
-                .frame(maxWidth: entry.size.width, maxHeight: entry.size.height)
-            
-
+        switch entry.type {
+        case .gif:
+            RectBackgroudView(entry: entry)
+        case .quotes:
+            RectBackgroudView(entry: entry)
+        case .countdown:
+            RectBackgroudView(entry: entry)
+        case .placeholder:
+            LockPlaceHolderView(size: entry.size)
+        default:
+            EmptyView()
         }
 
     }

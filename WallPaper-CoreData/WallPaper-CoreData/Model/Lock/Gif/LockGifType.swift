@@ -8,10 +8,11 @@
 import SwiftUI
 
 
-enum FamilyGifLock: Int, CaseIterable {
+enum FamilyLock: Int, CaseIterable {
     
     case rectangle = 1
     case square = 2
+    case inline = 3
     
     var name: String {
         switch self {
@@ -19,12 +20,14 @@ enum FamilyGifLock: Int, CaseIterable {
             return "square"
         case .rectangle:
             return "rectangle"
+        case .inline:
+            return "inline"
         }
     }
     
-    static func getType(name: String) -> FamilyGifLock {
+    static func getType(name: String) -> FamilyLock {
         
-        for type in FamilyGifLock.allCases {
+        for type in FamilyLock.allCases {
             if type.name == name {
                 return type
             }

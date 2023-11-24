@@ -124,7 +124,18 @@ extension HomeProvider {
         for _ in 0 ..< count {
             imageForTimeline.append(contentsOf: images)
         }
-        print("DEBUG: \(count) count")
+        
+        if type == .placeholder {
+            let entry = SourceImageEntry(date: .now,
+                                         image: images.first ?? UIImage(named: AssetConstant.imagePlacehodel)!,
+                                         size: size,
+                                         type: type,
+                                         btnChecklistModel: btnCLModel,
+                                         imgViewModel: viewModel,
+                                         imgSrc: configuration.imageSrc,
+                                         routineType: routineType)
+            return Timeline(entries: [entry], policy: .never)
+        }
         
         let currentDate = Date()
         for (key, image) in imageForTimeline.enumerated() {

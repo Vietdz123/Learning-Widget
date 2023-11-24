@@ -52,10 +52,11 @@ class WDGifNetworkManager {
     
     private func downloadFileCoreData(data: EztLockGifWidget, completion: @escaping(() -> Void)) {
         let dispathGroup = DispatchGroup()
-        let folderType = FamilyGifLock.getType(name: FamilyGifLock(rawValue: data.type)?.name ?? "").name
+        let folderType = FamilyLock.getType(name: FamilyLock(rawValue: data.type)?.name ?? "").name
         let foldername = "\(LockType.gif.rawValue) \(data.id)"
         
-        let existCate = CoreDataService.shared.getCategory(name: foldername)
+        let existCate = CoreDataService.shared.getLockCategory(name: foldername)
+        let familyLock = FamilyLock.getType(name: FamilyLock(rawValue: data.type)?.name ?? "").name
         if let existCate = existCate, let items = existCate.items {
             existCate.removeFromItems(items)
 
@@ -63,13 +64,15 @@ class WDGifNetworkManager {
         }
         
         let category = CategoryLock(context: context)
+        
         category.lockType = LockType.gif.rawValue
         category.name = foldername
         category.creationDate = Date().timeIntervalSinceNow
         category.hasSound = false
         category.delayAnimation = Double(data.delay_animation) / 1000.0
+        category.familyType = familyLock
         
-        var widgetPath = data.file
+        let widgetPath = data.file
 //        if let sounds = data.sound {
 //            widgetPath += sounds.map { sound in
 //                return WidgetPath(file_name: sound.file_name, key_type: sound.key_type, type_file: sound.type_file, url: sound.url)
@@ -82,7 +85,7 @@ class WDGifNetworkManager {
             dispathGroup.enter()
             
             let item = Item(context: context)
-            item.family = FamilyGifLock.getType(name: FamilyGifLock(rawValue: data.type)?.name ?? "").name
+            item.family = familyLock
             item.creationDate = Date().timeIntervalSinceNow + Double(1000 * index)
             item.name = path.file_name
             

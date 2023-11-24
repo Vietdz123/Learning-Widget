@@ -12,15 +12,24 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Button(action: {
-//                WDHomeNetworkManager.shared.requestApi { _ in
-//                    print("DEBUG: Done")
-//                }
                 
                 WDGifNetworkManager.shared.requestApi { _ in
                     print("DEBUG: Done")
                 }
             }, label: {
-                Text("Load Data")
+                Text("Load Data Lock")
+                    .padding(.bottom, 40)
+            })
+            
+            
+            
+            Button(action: {
+                WDHomeNetworkManager.shared.requestApi { _ in
+                    print("DEBUG: Done")
+                }
+                
+            }, label: {
+                Text("Load Data Home")
             })
             
         }

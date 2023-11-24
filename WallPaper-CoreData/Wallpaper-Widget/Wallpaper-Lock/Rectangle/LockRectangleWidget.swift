@@ -21,7 +21,7 @@ struct LockRectangleWidget: Widget {
                 .containerBackground(.fill.tertiary, for: .widget)
         }
         .contentMarginsDisabled()
-        .supportedFamilies([ .accessoryRectangular ])
+        .supportedFamilies([ .accessoryRectangular, .systemMedium ])
         
     }
 }

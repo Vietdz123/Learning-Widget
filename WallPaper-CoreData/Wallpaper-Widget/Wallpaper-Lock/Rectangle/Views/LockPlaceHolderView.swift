@@ -15,13 +15,12 @@ struct LockPlaceHolderView: View {
     var body: some View {
         ZStack {
                 
-            Image(systemName: "hand.raised")
+            Image("sasuke")
                 .resizable()
-                .frame(width: 45, height: 45)
+                .renderingMode(.original)
+                .frame(width: 50, height: 50)
             
         }
-            
-
     }
 }
 

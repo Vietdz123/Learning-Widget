@@ -19,7 +19,7 @@ struct HomeProvider: AppIntentTimelineProvider {
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SourceImageEntry {
         print("DEBUG: goto snapshot")
-        WidgetCenter.shared.reloadAllTimelines()
+//        WidgetCenter.shared.reloadAllTimelines()
         return SourceImageEntry(date: .now, image: UIImage(named: AssetConstant.imagePlacehodel)!, size: context.displaySize, type: .placeholder, btnChecklistModel: ButtonCheckListModel(), imgViewModel: ImageDataViewModel(), imgSrc: ImageSource(id: "img", actualName: "img"), routineType: .single)
     }
     

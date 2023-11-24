@@ -68,7 +68,7 @@
 		0489A1192B1062E200399ED9 /* LockPlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A10A2B105DFC00399ED9 /* LockPlaceHolderView.swift */; };
 		0489A11A2B1062E500399ED9 /* RectangleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A1102B105F4E00399ED9 /* RectangleProvider.swift */; };
 		0489A11B2B1062E700399ED9 /* PlayButtonIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6B7992B0753C700E9ED63 /* PlayButtonIntent.swift */; };
-		0489A11C2B1062EB00399ED9 /* LockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A1072B105CED00399ED9 /* LockViewModel.swift */; };
+		0489A11C2B1062EB00399ED9 /* RectangleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A1072B105CED00399ED9 /* RectangleViewModel.swift */; };
 		0489A11D2B10631300399ED9 /* LockRectangleConfigurationAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A10C2B105ED400399ED9 /* LockRectangleConfigurationAppIntent.swift */; };
 		0489A1202B10641F00399ED9 /* RectangleWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A11E2B1063AE00399ED9 /* RectangleWidgetView.swift */; };
 		0489A1392B107F9600399ED9 /* LockSquareConfigurationAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A1312B107EC800399ED9 /* LockSquareConfigurationAppIntent.swift */; };
@@ -79,6 +79,16 @@
 		0489A1432B10827100399ED9 /* InlineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A1352B107F4F00399ED9 /* InlineProvider.swift */; };
 		0489A1442B1082A300399ED9 /* LockInlineWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A12D2B107E4400399ED9 /* LockInlineWidget.swift */; };
 		0489A1452B1082AA00399ED9 /* LockInlineIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A1332B107F2400399ED9 /* LockInlineIntent.swift */; };
+		0489A1492B10869B00399ED9 /* SquareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A1472B10868900399ED9 /* SquareViewModel.swift */; };
+		0489A1552B108A9E00399ED9 /* RectBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A1532B108A8B00399ED9 /* RectBackgroundView.swift */; };
+		0489A1582B108B7500399ED9 /* AppEntity+Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A1562B108B4400399ED9 /* AppEntity+Query.swift */; };
+		0489A1592B10923300399ED9 /* ExtensionRectangleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A14C2B1086CE00399ED9 /* ExtensionRectangleProvider.swift */; };
+		0489A15A2B10942700399ED9 /* CategoryLockExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A0E22B103AB700399ED9 /* CategoryLockExtension.swift */; };
+		0489A15C2B109F8500399ED9 /* AppEntity+QuerySquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A15B2B109F8500399ED9 /* AppEntity+QuerySquare.swift */; };
+		0489A15E2B10A0B600399ED9 /* SquareBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A15D2B10A0B600399ED9 /* SquareBackgroundView.swift */; };
+		0489A15F2B10A10D00399ED9 /* ExtensionSquareProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A14A2B1086C300399ED9 /* ExtensionSquareProvider.swift */; };
+		0489A1612B10A8D900399ED9 /* ChangeBackgroundSquareIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A1602B10A8D900399ED9 /* ChangeBackgroundSquareIntent.swift */; };
+		0489A1632B10A91A00399ED9 /* ChangeBackgroundRectIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A1622B10A91A00399ED9 /* ChangeBackgroundRectIntent.swift */; };
 		049024992B0DB4B100481973 /* SourceMakerIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045673C62B0222C600D7B28F /* SourceMakerIntent.swift */; };
 		0490249A2B0DB4BC00481973 /* ImageDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045673BE2B02228500D7B28F /* ImageDataViewModel.swift */; };
 		049024ED2B0E103C00481973 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049024E92B0E103C00481973 /* Category+CoreDataProperties.swift */; };
@@ -168,7 +178,7 @@
 		0489A0FD2B1049AA00399ED9 /* LockType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockType.swift; sourceTree = "<group>"; };
 		0489A1002B104DDE00399ED9 /* CategoryLock+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryLock+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0489A1012B104DDE00399ED9 /* CategoryLock+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryLock+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0489A1072B105CED00399ED9 /* LockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockViewModel.swift; sourceTree = "<group>"; };
+		0489A1072B105CED00399ED9 /* RectangleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleViewModel.swift; sourceTree = "<group>"; };
 		0489A10A2B105DFC00399ED9 /* LockPlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockPlaceHolderView.swift; sourceTree = "<group>"; };
 		0489A10C2B105ED400399ED9 /* LockRectangleConfigurationAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockRectangleConfigurationAppIntent.swift; sourceTree = "<group>"; };
 		0489A1102B105F4E00399ED9 /* RectangleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleProvider.swift; sourceTree = "<group>"; };
@@ -182,6 +192,15 @@
 		0489A1372B107F5E00399ED9 /* SquareProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareProvider.swift; sourceTree = "<group>"; };
 		0489A13C2B1080DD00399ED9 /* SquareWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareWidgetView.swift; sourceTree = "<group>"; };
 		0489A1402B10815500399ED9 /* InlineWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineWidgetView.swift; sourceTree = "<group>"; };
+		0489A1472B10868900399ED9 /* SquareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareViewModel.swift; sourceTree = "<group>"; };
+		0489A14A2B1086C300399ED9 /* ExtensionSquareProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSquareProvider.swift; sourceTree = "<group>"; };
+		0489A14C2B1086CE00399ED9 /* ExtensionRectangleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionRectangleProvider.swift; sourceTree = "<group>"; };
+		0489A1532B108A8B00399ED9 /* RectBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectBackgroundView.swift; sourceTree = "<group>"; };
+		0489A1562B108B4400399ED9 /* AppEntity+Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppEntity+Query.swift"; sourceTree = "<group>"; };
+		0489A15B2B109F8500399ED9 /* AppEntity+QuerySquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppEntity+QuerySquare.swift"; sourceTree = "<group>"; };
+		0489A15D2B10A0B600399ED9 /* SquareBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareBackgroundView.swift; sourceTree = "<group>"; };
+		0489A1602B10A8D900399ED9 /* ChangeBackgroundSquareIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBackgroundSquareIntent.swift; sourceTree = "<group>"; };
+		0489A1622B10A91A00399ED9 /* ChangeBackgroundRectIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBackgroundRectIntent.swift; sourceTree = "<group>"; };
 		049024E92B0E103C00481973 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		049024EA2B0E103C00481973 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		049024EB2B0E103C00481973 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -236,6 +255,7 @@
 			children = (
 				04C6B7972B07296000E9ED63 /* Info.plist */,
 				0485EAF02B01C8DB00C2C6DF /* Assets.xcassets */,
+				04C6B7672B07187D00E9ED63 /* WidgetBundleHome.swift */,
 				04C6B77A2B071D1600E9ED63 /* Wallpaper-Lock */,
 				04C6B7962B0728F600E9ED63 /* Wallpaper-Home */,
 			);
@@ -415,6 +435,7 @@
 			children = (
 				0489A10A2B105DFC00399ED9 /* LockPlaceHolderView.swift */,
 				0489A11E2B1063AE00399ED9 /* RectangleWidgetView.swift */,
+				0489A1532B108A8B00399ED9 /* RectBackgroundView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -423,6 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				0489A1102B105F4E00399ED9 /* RectangleProvider.swift */,
+				0489A14C2B1086CE00399ED9 /* ExtensionRectangleProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -432,6 +454,8 @@
 			children = (
 				04C6B7992B0753C700E9ED63 /* PlayButtonIntent.swift */,
 				0489A10C2B105ED400399ED9 /* LockRectangleConfigurationAppIntent.swift */,
+				0489A1562B108B4400399ED9 /* AppEntity+Query.swift */,
+				0489A1622B10A91A00399ED9 /* ChangeBackgroundRectIntent.swift */,
 			);
 			path = Intent;
 			sourceTree = "<group>";
@@ -439,7 +463,7 @@
 		0489A1062B105C5700399ED9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0489A1072B105CED00399ED9 /* LockViewModel.swift */,
+				0489A1072B105CED00399ED9 /* RectangleViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -483,6 +507,7 @@
 		0489A1252B107DEE00399ED9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0489A1472B10868900399ED9 /* SquareViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -491,6 +516,8 @@
 			isa = PBXGroup;
 			children = (
 				0489A1312B107EC800399ED9 /* LockSquareConfigurationAppIntent.swift */,
+				0489A15B2B109F8500399ED9 /* AppEntity+QuerySquare.swift */,
+				0489A1602B10A8D900399ED9 /* ChangeBackgroundSquareIntent.swift */,
 			);
 			path = Intent;
 			sourceTree = "<group>";
@@ -499,6 +526,7 @@
 			isa = PBXGroup;
 			children = (
 				0489A1372B107F5E00399ED9 /* SquareProvider.swift */,
+				0489A14A2B1086C300399ED9 /* ExtensionSquareProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -507,6 +535,7 @@
 			isa = PBXGroup;
 			children = (
 				0489A13C2B1080DD00399ED9 /* SquareWidgetView.swift */,
+				0489A15D2B10A0B600399ED9 /* SquareBackgroundView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -585,7 +614,6 @@
 		04C6B7962B0728F600E9ED63 /* Wallpaper-Home */ = {
 			isa = PBXGroup;
 			children = (
-				04C6B7672B07187D00E9ED63 /* WidgetBundleHome.swift */,
 				045673982B020FD100D7B28F /* Wallpaper_WidgetBundle.swift */,
 				045673912B02072600D7B28F /* Model */,
 				045673902B02072100D7B28F /* Views */,
@@ -765,14 +793,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				049024F22B0E103C00481973 /* Item+CoreDataClass.swift in Sources */,
+				0489A15F2B10A10D00399ED9 /* ExtensionSquareProvider.swift in Sources */,
 				0489A11B2B1062E700399ED9 /* PlayButtonIntent.swift in Sources */,
 				0489A0F02B10411E00399ED9 /* CommonResponseModel.swift in Sources */,
 				045673AD2B0210CB00D7B28F /* HomeNetworkManager.swift in Sources */,
 				045673CB2B0222C600D7B28F /* SingleRoutineButtonIntent.swift in Sources */,
 				045673A82B0210BD00D7B28F /* WDHomeFolderType.swift in Sources */,
 				045673972B02088500D7B28F /* CoreDataService.swift in Sources */,
-				0489A11C2B1062EB00399ED9 /* LockViewModel.swift in Sources */,
+				0489A11C2B1062EB00399ED9 /* RectangleViewModel.swift in Sources */,
 				045673A02B02100400D7B28F /* WallPaperView.swift in Sources */,
+				0489A1492B10869B00399ED9 /* SquareViewModel.swift in Sources */,
+				0489A1552B108A9E00399ED9 /* RectBackgroundView.swift in Sources */,
 				045673C92B0222C600D7B28F /* RandomRoutinButtonIntent.swift in Sources */,
 				0489A0F62B1043CC00399ED9 /* GifNetworkManager.swift in Sources */,
 				045673A32B02104A00D7B28F /* WDConstant.swift in Sources */,
@@ -780,10 +811,12 @@
 				0489A0FF2B1049AA00399ED9 /* LockType.swift in Sources */,
 				049024F02B0E103C00481973 /* Item+CoreDataProperties.swift in Sources */,
 				0489A1432B10827100399ED9 /* InlineProvider.swift in Sources */,
+				0489A15E2B10A0B600399ED9 /* SquareBackgroundView.swift in Sources */,
 				0456739C2B020FF400D7B28F /* AppIntent.swift in Sources */,
 				0489A0F32B1041A800399ED9 /* WDGifLockModel.swift in Sources */,
 				0489A11A2B1062E500399ED9 /* RectangleProvider.swift in Sources */,
 				045673A72B0210BD00D7B28F /* WeekendDayModel.swift in Sources */,
+				0489A15A2B10942700399ED9 /* CategoryLockExtension.swift in Sources */,
 				045673C22B0222BB00D7B28F /* CheckListView.swift in Sources */,
 				0489A1442B1082A300399ED9 /* LockInlineWidget.swift in Sources */,
 				045673A92B0210BD00D7B28F /* WDNetworkHomeModel.swift in Sources */,
@@ -796,16 +829,20 @@
 				0489A0FC2B1048BA00399ED9 /* LockGifType.swift in Sources */,
 				0489A1422B10817700399ED9 /* InlineWidgetView.swift in Sources */,
 				0489A1392B107F9600399ED9 /* LockSquareConfigurationAppIntent.swift in Sources */,
+				0489A1612B10A8D900399ED9 /* ChangeBackgroundSquareIntent.swift in Sources */,
 				0489A1162B1060B900399ED9 /* LockRectangleWidget.swift in Sources */,
 				045673CA2B0222C600D7B28F /* SourceMakerIntent.swift in Sources */,
 				045673A42B02105900D7B28F /* DataController.swift in Sources */,
 				0489A13F2B10812400399ED9 /* LockSquareWidget.swift in Sources */,
+				0489A15C2B109F8500399ED9 /* AppEntity+QuerySquare.swift in Sources */,
 				0475C18B2B0C90E5002DD99D /* ExtensionProvider.swift in Sources */,
 				0456739A2B020FD100D7B28F /* Wallpaper_WidgetBundle.swift in Sources */,
 				049024F42B0E103C00481973 /* Category+CoreDataClass.swift in Sources */,
 				045673892B0206E200D7B28F /* WidgetModel.xcdatamodeld in Sources */,
+				0489A1592B10923300399ED9 /* ExtensionRectangleProvider.swift in Sources */,
 				045673AC2B0210C900D7B28F /* FileService.swift in Sources */,
 				0489A13B2B10808700399ED9 /* SquareProvider.swift in Sources */,
+				0489A1632B10A91A00399ED9 /* ChangeBackgroundRectIntent.swift in Sources */,
 				045673A52B02105C00D7B28F /* ItemExtension.swift in Sources */,
 				045673AA2B0210BD00D7B28F /* ButtonCheckListModel.swift in Sources */,
 				045673A62B02105E00D7B28F /* CategoryExtension.swift in Sources */,
@@ -813,6 +850,7 @@
 				045673C82B0222C600D7B28F /* ChangeBackgroundIntent.swift in Sources */,
 				0489A1202B10641F00399ED9 /* RectangleWidgetView.swift in Sources */,
 				045673AB2B0210BD00D7B28F /* FolderModel.swift in Sources */,
+				0489A1582B108B7500399ED9 /* AppEntity+Query.swift in Sources */,
 				04C6B7912B07255A00E9ED63 /* WidgetBundleHome.swift in Sources */,
 				045673C32B0222BB00D7B28F /* BackgroudView.swift in Sources */,
 				049024EE2B0E103C00481973 /* Category+CoreDataProperties.swift in Sources */,

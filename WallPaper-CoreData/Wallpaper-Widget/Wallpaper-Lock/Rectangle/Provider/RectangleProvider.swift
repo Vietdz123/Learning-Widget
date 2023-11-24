@@ -12,26 +12,23 @@ import SwiftUI
 struct RectangleProvider: AppIntentTimelineProvider {
 
     
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), image: UIImage(named: AssetConstant.checklistButton)!, size: context.displaySize)
+    func placeholder(in context: Context) -> RectangleEntry {
+        RectangleEntry(date: .now, image: UIImage(named: AssetConstant.checklistButton)!, size: context.displaySize, type: .placeholder, imgViewModel: RectangleViewModel(), imgSrc: RectSource(id: LockType.placeholder.rawValue, actualName: LockType.placeholder.rawValue))
     }
 
-    func snapshot(for configuration: LockRectangleConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        WidgetCenter.shared.reloadAllTimelines()
-        return SimpleEntry(date: Date(), image: UIImage(named: AssetConstant.checklistButton)!, size: context.displaySize)
+    func snapshot(for configuration: LockRectangleConfigurationAppIntent, in context: Context) async -> RectangleEntry {
+        return RectangleEntry(date: .now, image: UIImage(named: AssetConstant.checklistButton)!, size: context.displaySize, type: .placeholder, imgViewModel: RectangleViewModel(), imgSrc: RectSource(id: LockType.placeholder.rawValue, actualName: LockType.placeholder.rawValue))
     }
     
-    func timeline(for configuration: LockRectangleConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
-        print("DEBUG: goto timeline")
-
-        let entry = SimpleEntry(date: Date(), image: UIImage(named: AssetConstant.checklistButton)!, size: context.displaySize)
+    func timeline(for configuration: LockRectangleConfigurationAppIntent, in context: Context) async -> Timeline<RectangleEntry> {
         
-        return Timeline(entries: [entry], policy: .never)
+        let viewModel = RectWidgetViewModel.shared.dict[configuration.imageSrc.actualName] ?? RectangleViewModel()
+        
+        viewModel.loadData(category: configuration.imageSrc.getCategory())
+        viewModel.images = configuration.imageSrc.getImages()
+        let entry = getProviderGif(viewModel: viewModel, configuration: configuration, size: context.displaySize)
+        
+        return entry
     }
 }
 
-struct SimpleEntry: TimelineEntry {
-    let date: Date
-    let image: UIImage
-    let size: CGSize
-}

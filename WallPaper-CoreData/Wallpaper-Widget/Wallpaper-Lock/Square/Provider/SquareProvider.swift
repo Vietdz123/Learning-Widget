@@ -13,25 +13,22 @@ struct SquareProvider: AppIntentTimelineProvider {
 
     
     func placeholder(in context: Context) -> SquareEntry {
-        SquareEntry(date: Date(), image: UIImage(named: AssetConstant.checklistButton)!, size: context.displaySize)
+        SquareEntry(date: .now, image: UIImage(named: AssetConstant.checklistButton)!, size: context.displaySize, type: .placeholder, imgViewModel: SquareViewModel(), imgSrc: SquareSource(id: LockType.placeholder.rawValue, actualName: LockType.placeholder.rawValue))
     }
 
     func snapshot(for configuration: LockSquareConfigurationAppIntent, in context: Context) async -> SquareEntry {
-        WidgetCenter.shared.reloadAllTimelines()
-        return SquareEntry(date: Date(), image: UIImage(named: AssetConstant.checklistButton)!, size: context.displaySize)
+        return SquareEntry(date: .now, image: UIImage(named: AssetConstant.checklistButton)!, size: context.displaySize, type: .placeholder, imgViewModel: SquareViewModel(), imgSrc: SquareSource(id: LockType.placeholder.rawValue, actualName: LockType.placeholder.rawValue))
     }
     
     func timeline(for configuration: LockSquareConfigurationAppIntent, in context: Context) async -> Timeline<SquareEntry> {
-        print("DEBUG: goto timeline")
-
-        let entry = SquareEntry(date: Date(), image: UIImage(named: AssetConstant.checklistButton)!, size: context.displaySize)
         
-        return Timeline(entries: [entry], policy: .never)
+        let viewModel = SquareWidgetViewModel.shared.dict[configuration.imageSrc.actualName] ?? SquareViewModel()
+        
+        viewModel.loadData(category: configuration.imageSrc.getCategory())
+        viewModel.images = configuration.imageSrc.getImages()
+        let entry = getProviderGif(viewModel: viewModel, configuration: configuration, size: context.displaySize)
+        
+        return entry
     }
 }
 
-struct SquareEntry: TimelineEntry {
-    let date: Date
-    let image: UIImage
-    let size: CGSize
-}

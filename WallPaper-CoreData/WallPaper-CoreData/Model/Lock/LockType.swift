@@ -14,6 +14,7 @@ enum LockType: String, CaseIterable {
     case inline = "Inline"
     case countdown = "Countdown"
     case icon = "Icon"
+    case placeholder = "Placeholder"
     
     
     
