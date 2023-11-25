@@ -63,7 +63,7 @@ extension SquareProvider {
                                        type: type,
                                        imgViewModel: viewModel,
                                        imgSrc: configuration.imageSrc)
-            return Timeline(entries: [entry], policy: .never)
+            return Timeline(entries: [entry], policy: .atEnd)
         }
         
         let currentDate = Date()

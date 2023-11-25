@@ -27,7 +27,6 @@ struct SoundMakerIntent: AudioPlaybackIntent {
     func perform() async throws -> some IntentResult {
         
         guard let cate = CoreDataService.shared.getCategory(name: id_name) else { return .result() }
-        print("DEBUG: \(id_name) and \(WidgetViewModel.shared.dict[id_name])")
         let urls = CoreDataService.shared.getSounds(category: cate, family: .singleSound)
         if let url = urls.first {
             SoundPlayer.shared.play(url: url)

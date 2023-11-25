@@ -233,9 +233,8 @@ extension CoreDataService {
                 try context.save()
                 
             } catch {
-                let nserror = error as NSError
-                print("DEBUG: fatal error \(nserror.localizedDescription)")
-                fatalError("Error CoreData saveContext")
+                print("DEBUG: fatal error \(error.localizedDescription)")
+                
                 
             }
         }

@@ -69,9 +69,12 @@ struct RectSource: AppEntity {
 struct RectQuery: EntityStringQuery {
     
     func entities(matching string: String) async throws -> [RectSource] {
-        return RectSource.getAllSource().filter { imgsrc in
+        let srcs = RectSource.getAllSource().filter { imgsrc in
             return imgsrc.id == string
         }
+        print("DEBUG: \(srcs.count) entitiesa")
+        
+        return srcs
     }
     
     

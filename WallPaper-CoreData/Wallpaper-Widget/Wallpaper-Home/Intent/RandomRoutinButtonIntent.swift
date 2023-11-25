@@ -31,9 +31,8 @@ struct RandomRoutinButtonIntent: AppIntent {
     func perform() async throws -> some IntentResult & ReturnsValue {
         print("DEBUG: goto perform RandomRoutinButtonIntent")
 
-        guard let viewModel = WidgetViewModel.shared.dict[id_name],
-              let category = viewModel.category else {return .result()}
-        let images = viewModel.checkedImages
+        guard let category = CoreDataService.shared.getCategory(name: id_name) else {return .result()}
+        let numberCheckedImages = category.numberCheckedImages
         
         if category.isCheckedRoutine.count < id_day {
             return .result()
@@ -47,7 +46,7 @@ struct RandomRoutinButtonIntent: AppIntent {
             return .result()
         }
         
-        if Int(category.currentCheckImageRoutine[id_day]) < images.count - 1 {
+        if category.currentCheckImageRoutine[id_day] < numberCheckedImages - 1 {
             category.currentCheckImageRoutine[id_day] += 1
         } else {
             category.isCheckedRoutine[id_day].toggle()

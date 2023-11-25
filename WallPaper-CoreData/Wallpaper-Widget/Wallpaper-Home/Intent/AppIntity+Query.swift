@@ -90,9 +90,12 @@ struct ImageSource: AppEntity {
 struct ImageQuery: EntityStringQuery {
     
     func entities(matching string: String) async throws -> [ImageSource] {
-        return ImageSource.getAllSource().filter { imgsrc in
+        let srcs = ImageSource.getAllSource().filter { imgsrc in
             return imgsrc.id == string
         }
+        
+        print("DEBUG: \(srcs.count) entities home")
+        return srcs
     }
     
     
@@ -101,13 +104,6 @@ struct ImageQuery: EntityStringQuery {
         let imgs = ImageSource.getAllSource().filter { imgsrc in
             return identifiers.contains { id in
                 return id == imgsrc.id
-            }
-        }
-        
-        if imgs.count > 0 && WidgetViewModel.shared.dict[imgs[0].actualName] == nil {
-            if let cate = CoreDataService.shared.getCategory(name: imgs[0].actualName)  {
-                let name = cate.unwrappedName
-                WidgetViewModel.shared.dict[name] = ImageDataViewModel()
             }
         }
         

@@ -153,8 +153,8 @@ extension WDHomeNetworkManager {
         components.queryItems = [
             URLQueryItem(name: "with", value: WDNetworkManagerConstant.query),
             URLQueryItem(name: "limit", value: "\(100)"),
-            URLQueryItem(name: "where", value: "active+0"),
-            URLQueryItem(name: "dev", value: "1"),
+//            URLQueryItem(name: "where", value: "active+0"),
+//            URLQueryItem(name: "dev", value: "1"),
         ]
         
         return components.url

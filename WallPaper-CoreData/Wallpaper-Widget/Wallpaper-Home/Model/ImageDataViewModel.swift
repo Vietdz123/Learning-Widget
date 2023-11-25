@@ -7,19 +7,12 @@
 
 import SwiftUI
 
-enum UpdateCurrentType {
-
-    case reset
-    case plus
-}
 
 class ImageDataViewModel {
     
-    let context = DataController().container.viewContext
     var dateCheckListModel: [WeekendDayModel] = [.init(day: .sunday), .init(day: .monday), .init(day: .tuesday), .init(day: .thursday),
                                                  .init(day: .wednesday), .init(day: .friday),
                                                  .init(day: .saturday)]
-    var images: [UIImage] = []
     var btnChecklistModel = ButtonCheckListModel()
     var currentCheckImageRoutine: [Int] = Array(repeating: 0, count: 7)
     
@@ -50,47 +43,7 @@ class ImageDataViewModel {
         }
     }
     
-    func toggleShouldPlaySound() {
-        category?.shouldPlaySound.toggle()
-        CoreDataService.shared.saveContext()
-    }
-    
-     func updateCurrentIndex()  {
-         guard let category1 = category else { return }
-         if images.count <= 0 { return SoundPlayer.shared.updateStatus = .reset }
-        
-        if currentIndex < images.count - 1 {
-            category?.currentIndexDigitalFriend += 1
-            SoundPlayer.shared.updateStatus = .plus
-            
-        } else {
-            
-            category?.currentIndexDigitalFriend = 0
-            SoundPlayer.shared.updateStatus = .reset
-        }
-         
-         CoreDataService.shared.saveContext()
-    }
-    
-    var currentImage: UIImage {
-        if self.currentIndex >= images.count  {
-            return self.images.count == 0 ? UIImage(named: AssetConstant.imagePlacehodel)! : images[0]
-        }
-        return self.images.count == 0 ? UIImage(named: AssetConstant.imagePlacehodel)! : images[currentIndex]
-    }
 
-    var randomImage: UIImage {
-        
-        return self.images.count == 0 ? UIImage(named: AssetConstant.imagePlacehodel)! : images.shuffled().first!
-        
-    }
 }
 
 
-class WidgetViewModel {
-    
-    static var shared = WidgetViewModel()
-    
-    var dict: [String: ImageDataViewModel] = [:]
-    
-}

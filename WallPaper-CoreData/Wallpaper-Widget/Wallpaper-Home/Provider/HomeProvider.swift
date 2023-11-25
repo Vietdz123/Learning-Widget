@@ -27,28 +27,20 @@ struct HomeProvider: AppIntentTimelineProvider {
         
         print("DEBUG: goto timeline ")
          
-        let viewModel = WidgetViewModel.shared.dict[configuration.imageSrc.actualName] ?? ImageDataViewModel()
+        let viewModel = ImageDataViewModel()
         let folderType = configuration.imageSrc.getFolderType()
-        
-        viewModel.loadData(category: configuration.imageSrc.getCategory())
-        switch context.family {
-        case .systemSmall, .systemLarge:
-            viewModel.images = configuration.imageSrc.getImages(family: .square)
-        case .systemMedium:
-            viewModel.images = configuration.imageSrc.getImages(family: .rectangle)
-        default:
-            viewModel.images = []
-        }
+        let cate = configuration.imageSrc.getCategory()
+        viewModel.loadData(category: cate)
         
         switch folderType {
         case .digitalFriend, .routineMonitor, .placeholder:
-            let provider = getProviderDigitalAndRoutine(viewModel: viewModel, configuration: configuration, size: context.displaySize)
+            let provider = getProviderDigitalAndRoutine(viewModel: viewModel, configuration: configuration, size: context.displaySize, family: context.family, category: cate)
             return provider
         case .sound:
-            let provider = getProviderSounds(viewModel: viewModel, configuration: configuration, size: context.displaySize)
+            let provider = getProviderSounds(viewModel: viewModel, configuration: configuration, size: context.displaySize, family: context.family, category: cate)
             return provider
         case .gif:
-            let provider = getProviderGif(viewModel: viewModel, configuration: configuration, size: context.displaySize)
+            let provider = getProviderGif(viewModel: viewModel, configuration: configuration, size: context.displaySize, family: context.family, category: cate)
             return provider
         }
         

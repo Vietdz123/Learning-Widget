@@ -11,6 +11,11 @@ extension Category {
     
     @NSManaged var currentCheckImageRoutine: [Double]
     @NSManaged var isCheckedRoutine: [Bool]
+    @NSManaged var numberImagesRect: Double
+    @NSManaged var numberImagesSquare: Double
+    @NSManaged var isFirstImage: Bool
+    @NSManaged var numberCheckedImages: Double
+    
     
     public var unwrappedName: String {
         name ?? "Unknown name"
@@ -50,6 +55,66 @@ extension Category {
         }
     }
     
+    func updateCurrentIndex(isRect: Bool = true)  {
+        if isRect {
+            if numberImagesRect <= 0 {  isFirstImage = true;  return }
+           
+           if currentIndexDigitalFriend < numberImagesRect - 1 {
+               currentIndexDigitalFriend += 1
+               isFirstImage = false
+               
+           } else {
+               currentIndexDigitalFriend = 0
+               isFirstImage = true
+           }
+        } else {
+            if numberImagesSquare <= 0 {  isFirstImage = true;  return }
+           
+           if currentIndexDigitalFriend < numberImagesSquare - 1 {
+               currentIndexDigitalFriend += 1
+               isFirstImage = false
+               
+           } else {
+               currentIndexDigitalFriend = 0
+               isFirstImage = true
+           }
+        }
+
+        
+        CoreDataService.shared.saveContext()
+    }
+    
+    func getCurrentImage(images: [UIImage]) -> UIImage {
+        if self.currentIndexDigitalFriend >= Double(images.count)  {
+            return images.count == 0 ? UIImage(named: AssetConstant.imagePlacehodel)! : images[0]
+        }
+        return images.count == 0 ? UIImage(named: AssetConstant.imagePlacehodel)! : images[Int(currentIndexDigitalFriend)]
+    }
+    
+    func getRandomImage(images: [UIImage]) -> UIImage {
+        return images.count == 0 ? UIImage(named: AssetConstant.imagePlacehodel)! : images.shuffled().first!
+    }
+    
+    func updateNumberCheckedImage(number: Double) {
+        
+        self.numberCheckedImages = number
+        CoreDataService.shared.saveContext()
+        
+    }
+    
+    func updateNumberRectImage(number: Double) {
+        
+        self.numberImagesRect = number
+        CoreDataService.shared.saveContext()
+        
+    }
+    
+    func updateNumberSquareImage(number: Double) {
+        
+        self.numberImagesSquare = number
+        CoreDataService.shared.saveContext()
+        
+    }
 
 }
 

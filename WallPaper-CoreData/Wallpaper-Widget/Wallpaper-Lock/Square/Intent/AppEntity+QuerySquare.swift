@@ -35,7 +35,7 @@ struct SquareSource: AppEntity {
     
          
     func getImages() -> [UIImage] {
-        guard let cate = getCategory() else { print("DEBUG: get failed cate"); return [UIImage(named: AssetConstant.imagePlacehodel)!] }
+        guard let cate = getCategory() else { return [UIImage(named: AssetConstant.imagePlacehodel)!] }
         let images = CoreDataService.shared.getImages(categoryLock: cate, family: .square)
         
         return images
@@ -71,9 +71,12 @@ struct SquareSource: AppEntity {
 struct SquareQuery: EntityStringQuery {
     
     func entities(matching string: String) async throws -> [SquareSource] {
-        return SquareSource.getAllSource().filter { imgsrc in
+        let srcs = SquareSource.getAllSource().filter { imgsrc in
             return imgsrc.id == string
         }
+        print("DEBUG: \(srcs.count) entitiesa")
+        
+        return srcs
     }
     
     

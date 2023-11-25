@@ -2,7 +2,7 @@
 //  CategoryLock+CoreDataProperties.swift
 //  WallPaper-CoreData
 //
-//  Created by MAC on 24/11/2023.
+//  Created by Three Bros on 25/11/2023.
 //
 //
 
@@ -22,8 +22,11 @@ extension CategoryLock {
     @NSManaged public var fontSize: Double
     @NSManaged public var fontType: String?
     @NSManaged public var hasSound: Bool
+    @NSManaged public var isFirstImage: Bool
     @NSManaged public var lockType: String?
     @NSManaged public var name: String?
+    @NSManaged public var numberImagesRect: Double
+    @NSManaged public var numberImagesSquare: Double
     @NSManaged public var soundType: String?
     @NSManaged public var textAlignment: String?
     @NSManaged public var textColor: String?

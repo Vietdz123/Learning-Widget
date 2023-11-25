@@ -176,8 +176,6 @@
 		0489A0F42B1043CC00399ED9 /* GifNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifNetworkManager.swift; sourceTree = "<group>"; };
 		0489A0FA2B1048BA00399ED9 /* LockGifType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockGifType.swift; sourceTree = "<group>"; };
 		0489A0FD2B1049AA00399ED9 /* LockType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockType.swift; sourceTree = "<group>"; };
-		0489A1002B104DDE00399ED9 /* CategoryLock+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryLock+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0489A1012B104DDE00399ED9 /* CategoryLock+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryLock+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0489A1072B105CED00399ED9 /* RectangleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleViewModel.swift; sourceTree = "<group>"; };
 		0489A10A2B105DFC00399ED9 /* LockPlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockPlaceHolderView.swift; sourceTree = "<group>"; };
 		0489A10C2B105ED400399ED9 /* LockRectangleConfigurationAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockRectangleConfigurationAppIntent.swift; sourceTree = "<group>"; };
@@ -214,6 +212,8 @@
 		8477D4774E7D6057442634E0 /* Pods-WallPaper-CoreData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallPaper-CoreData.release.xcconfig"; path = "Target Support Files/Pods-WallPaper-CoreData/Pods-WallPaper-CoreData.release.xcconfig"; sourceTree = "<group>"; };
 		96B1051C7C9DBF96504ACD2B /* Pods-Wallpaper-WidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpaper-WidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-Wallpaper-WidgetExtension/Pods-Wallpaper-WidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 		CA93044E15A981AB70C09F44 /* Pods-WallPaper-CoreData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallPaper-CoreData.debug.xcconfig"; path = "Target Support Files/Pods-WallPaper-CoreData/Pods-WallPaper-CoreData.debug.xcconfig"; sourceTree = "<group>"; };
+		D1DFBE372B11B9FB007512EE /* CategoryLock+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryLock+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D1DFBE382B11B9FB007512EE /* CategoryLock+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryLock+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EEE3FF5507D513869AABBFFD /* Pods_Wallpaper_WidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wallpaper_WidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -499,7 +499,6 @@
 				0489A12C2B107E2D00399ED9 /* Views */,
 				0489A12B2B107E2200399ED9 /* Provider */,
 				0489A12A2B107E1300399ED9 /* Intent */,
-				0489A1292B107E0C00399ED9 /* Model */,
 			);
 			path = Inline;
 			sourceTree = "<group>";
@@ -538,13 +537,6 @@
 				0489A15D2B10A0B600399ED9 /* SquareBackgroundView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		0489A1292B107E0C00399ED9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		0489A12A2B107E1300399ED9 /* Intent */ = {
@@ -587,8 +579,8 @@
 		049024C92B0E0B7E00481973 /* Lock */ = {
 			isa = PBXGroup;
 			children = (
-				0489A1002B104DDE00399ED9 /* CategoryLock+CoreDataClass.swift */,
-				0489A1012B104DDE00399ED9 /* CategoryLock+CoreDataProperties.swift */,
+				D1DFBE372B11B9FB007512EE /* CategoryLock+CoreDataClass.swift */,
+				D1DFBE382B11B9FB007512EE /* CategoryLock+CoreDataProperties.swift */,
 			);
 			path = Lock;
 			sourceTree = "<group>";

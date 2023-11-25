@@ -86,7 +86,6 @@ enum SoundType: String, CaseIterable {
     
     case circle = "sound_circle"
     case makeDesicion = "sound_make_decision"
-    case twoImage = "sound_two_image"
     
     var nameId: String {
         return self.rawValue

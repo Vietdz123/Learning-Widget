@@ -22,13 +22,18 @@ struct ChangeBackgroundIntent: AppIntent {
     @Parameter(title: "Task ID")
     var id_name: String
     
-    init(id_name: String) {
+    @Parameter(title: "Task ID")
+    var is_rect: Bool
+    
+    init(id_name: String, is_rect: Bool) {
         self.id_name = id_name
+        self.is_rect = is_rect
     }
     
     func perform() async throws -> some IntentResult {
         
-        WidgetViewModel.shared.dict[id_name]?.updateCurrentIndex()
+        let cate = CoreDataService.shared.getCategory(name: id_name)
+        cate?.updateCurrentIndex(isRect: is_rect)
         
         return .result()
     }

@@ -15,7 +15,15 @@ import AVFoundation
 struct BackgroudView: View {
     
     var entry: SourceImageEntry
-    let player = AVPlayer()
+    @Environment(\.widgetFamily) var family
+    
+    var is_rect: Bool {
+        if family == .accessoryRectangular || family == .systemMedium {
+            return true
+        } else {
+            return false
+        }
+    }
     
     var body: some View {
         ZStack {
@@ -34,7 +42,7 @@ struct BackgroudView: View {
                 }
                 .buttonStyle(.plain)
             } else {
-                Button(intent: ChangeBackgroundIntent(id_name: entry.imgSrc.actualName)) {
+                Button(intent: ChangeBackgroundIntent(id_name: entry.imgSrc.actualName, is_rect: is_rect)) {
                     Text("")
                         .frame(maxWidth: entry.size.width, maxHeight: entry.size.height)
                         .background(Color.clear)

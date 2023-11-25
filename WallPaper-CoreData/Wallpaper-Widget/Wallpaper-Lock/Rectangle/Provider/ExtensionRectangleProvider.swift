@@ -49,7 +49,7 @@ extension RectangleProvider {
         var imageForTimeline: [UIImage] = []
         let delayAnimation = viewModel.category?.delayAnimation ?? 1
         
-        let count = Int(600 / (Double(images.count) * (delayAnimation == 0 ? 1 : delayAnimation))) + 1
+        let count = Int(30 / (Double(images.count) * (delayAnimation == 0 ? 1 : delayAnimation))) + 1
         
         for _ in 0 ..< count {
             imageForTimeline.append(contentsOf: images)
@@ -64,7 +64,7 @@ extension RectangleProvider {
                                        type: type,
                                        imgViewModel: viewModel,
                                        imgSrc: configuration.imageSrc)
-            return Timeline(entries: [entry], policy: .never)
+            return Timeline(entries: [entry], policy: .atEnd)
         }
         
         let currentDate = Date()
@@ -79,7 +79,7 @@ extension RectangleProvider {
             entries.append(entry)
         }
         
-        let reloadDate = currentDate.addingTimeInterval(600)
+        let reloadDate = currentDate.addingTimeInterval(30)
         return Timeline(entries: entries, policy: .after(reloadDate))
 
     }
