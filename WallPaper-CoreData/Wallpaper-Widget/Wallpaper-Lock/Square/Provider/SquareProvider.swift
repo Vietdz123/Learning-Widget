@@ -22,13 +22,17 @@ struct SquareProvider: AppIntentTimelineProvider {
     
     func timeline(for configuration: LockSquareConfigurationAppIntent, in context: Context) async -> Timeline<SquareEntry> {
         
-        let viewModel = SquareWidgetViewModel.shared.dict[configuration.imageSrc.actualName] ?? SquareViewModel()
+        print("DEBUG: goto timeline ")
+         
+        let viewModel = SquareViewModel()
+        let cate = configuration.imageSrc.getCategory()
+        viewModel.loadData(category: cate)
         
-        viewModel.loadData(category: configuration.imageSrc.getCategory())
-        viewModel.images = configuration.imageSrc.getImages()
-        let entry = getProviderGif(viewModel: viewModel, configuration: configuration, size: context.displaySize)
+
         
-        return entry
+        let provider = getProviderGif(viewModel: viewModel, configuration: configuration, size: context.displaySize, category: cate)
+        return provider
+        
     }
 }
 

@@ -86,13 +86,6 @@ struct RectQuery: EntityStringQuery {
             }
         }
         
-        if imgs.count > 0 && RectWidgetViewModel.shared.dict[imgs[0].actualName] == nil {
-            if let cate = CoreDataService.shared.getLockCategory(name: imgs[0].actualName)  {
-                let name = cate.unwrappedName
-                RectWidgetViewModel.shared.dict[name] = RectangleViewModel()
-            }
-        }
-        
         if imgs.count > 0 {
             return [imgs[0]]
         } else {

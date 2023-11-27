@@ -35,7 +35,7 @@ struct SquareBackgroundView: View {
                 }
                 .buttonStyle(.plain)
             } else {
-                Button(intent: ChangeBackgroundSquareIntent(id_name: entry.imgSrc.actualName)) {
+                Button(intent: ChangeBackgroundSquareIntent(id_name: entry.imgSrc.actualName, is_rect: false)) {
                     Text("")
                         .frame(maxWidth: entry.size.width, maxHeight: entry.size.height)
                         .background(Color.clear)

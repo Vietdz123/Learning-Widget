@@ -22,13 +22,14 @@ struct RectangleProvider: AppIntentTimelineProvider {
     
     func timeline(for configuration: LockRectangleConfigurationAppIntent, in context: Context) async -> Timeline<RectangleEntry> {
         
-        let viewModel = RectWidgetViewModel.shared.dict[configuration.imageSrc.actualName] ?? RectangleViewModel()
-        
-        viewModel.loadData(category: configuration.imageSrc.getCategory())
-        viewModel.images = configuration.imageSrc.getImages()
-        let entry = getProviderGif(viewModel: viewModel, configuration: configuration, size: context.displaySize)
-        
-        return entry
+        print("DEBUG: goto timeline ")
+         
+        let viewModel = RectangleViewModel()
+        let cate = configuration.imageSrc.getCategory()
+        viewModel.loadData(category: cate)
+
+        let provider = getProviderGif(viewModel: viewModel, configuration: configuration, size: context.displaySize, category: cate)
+        return provider
     }
 }
 

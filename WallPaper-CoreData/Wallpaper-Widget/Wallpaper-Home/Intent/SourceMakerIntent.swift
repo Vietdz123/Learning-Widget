@@ -39,7 +39,6 @@ struct SoundMakerIntent: AudioPlaybackIntent {
 class SoundPlayer: NSObject {
     static let shared = SoundPlayer()
     var observer: NSKeyValueObservation!
-    var updateStatus: UpdateCurrentType = .reset
     
     let player: AVPlayer = AVPlayer()
     

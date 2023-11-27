@@ -94,7 +94,6 @@ struct ImageQuery: EntityStringQuery {
             return imgsrc.id == string
         }
         
-        print("DEBUG: \(srcs.count) entities home")
         return srcs
     }
     
@@ -122,5 +121,6 @@ struct ImageQuery: EntityStringQuery {
     func defaultResult() async -> ImageSource? {
         return ImageSource.defaultValue
     }
+    
 }
 

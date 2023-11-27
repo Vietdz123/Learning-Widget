@@ -12,9 +12,9 @@ import WidgetKit
 struct WidgetBundleHome: WidgetBundle {
     var body: some Widget {
         WallpaperWidget()
-//        LockRectangleWidget()        
+        LockRectangleWidget()        
 //        LockInlineWidget()
-//        LockSquareWidget()
+        LockSquareWidget()
         
     }
 }   

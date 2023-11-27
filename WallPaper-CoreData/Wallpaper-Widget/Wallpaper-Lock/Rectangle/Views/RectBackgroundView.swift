@@ -33,7 +33,7 @@ struct RectBackgroudView: View {
                 }
                 .buttonStyle(.plain)
             } else {
-                Button(intent: ChangeBackgroundRectIntent(id_name: entry.imgSrc.actualName)) {
+                Button(intent: ChangeBackgroundRectIntent(id_name: entry.imgSrc.actualName, is_rect: true)) {
                     Text("")
                         .frame(maxWidth: entry.size.width, maxHeight: entry.size.height)
                         .background(Color.clear)

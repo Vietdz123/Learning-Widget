@@ -79,6 +79,7 @@ class WDHomeNetworkManager {
         category.isCheckedRoutine = Array(repeating: false, count: 7)
         category.hasSound = false
         category.shouldPlaySound = false
+        category.delayAnimation = Double(data.delay_animation) / 1000.0
         
         if folderType == .routineMonitor {
             let routineType = RoutinMonitorType.getType(name: data.tags[0].name).nameId
@@ -86,8 +87,6 @@ class WDHomeNetworkManager {
         } else if folderType == .sound {
             let soundType = SoundType.getType(name: data.tags[0].name).nameId
             category.soundType = soundType
-        } else if folderType == .gif {
-            category.delayAnimation = Double(data.delay_animation) / 1000.0
         }
         
         var widgetPath = data.path
@@ -153,8 +152,8 @@ extension WDHomeNetworkManager {
         components.queryItems = [
             URLQueryItem(name: "with", value: WDNetworkManagerConstant.query),
             URLQueryItem(name: "limit", value: "\(100)"),
-//            URLQueryItem(name: "where", value: "active+0"),
-//            URLQueryItem(name: "dev", value: "1"),
+            URLQueryItem(name: "where", value: "active+0"),
+            URLQueryItem(name: "dev", value: "1"),
         ]
         
         return components.url

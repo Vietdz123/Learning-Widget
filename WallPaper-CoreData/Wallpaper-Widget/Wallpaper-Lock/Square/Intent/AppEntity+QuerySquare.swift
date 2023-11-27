@@ -66,6 +66,7 @@ struct SquareSource: AppEntity {
     var displayRepresentation: DisplayRepresentation {
         DisplayRepresentation(title: "\(id)")
     }
+    
 }
 
 struct SquareQuery: EntityStringQuery {
@@ -85,13 +86,6 @@ struct SquareQuery: EntityStringQuery {
         let imgs = SquareSource.getAllSource().filter { imgsrc in
             return identifiers.contains { id in
                 return id == imgsrc.id
-            }
-        }
-        
-        if imgs.count > 0 && SquareWidgetViewModel.shared.dict[imgs[0].actualName] == nil {
-            if let cate = CoreDataService.shared.getLockCategory(name: imgs[0].actualName)  {
-                let name = cate.unwrappedName
-                SquareWidgetViewModel.shared.dict[name] = SquareViewModel()
             }
         }
         

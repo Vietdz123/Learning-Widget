@@ -89,6 +89,7 @@ extension HomeProvider {
         let type = configuration.imageSrc.getFolderType()
         let btnCLModel = configuration.imageSrc.getButtonChecklistModel()
         let routineType = configuration.imageSrc.getRoutineType()
+        let dalayAnimation = category?.delayAnimation ?? 1
         
         let firstEntry = SourceImageEntry(date: .now,
                                           image: image,
@@ -108,7 +109,7 @@ extension HomeProvider {
                 category?.updateCurrentIndex()
                 count += 1
                 
-                let entryDate = Date().addingTimeInterval(1 * count)
+                let entryDate = Date().addingTimeInterval(dalayAnimation * count)
                 let image = category?.getCurrentImage(images: images) ?? UIImage(named: AssetConstant.imagePlacehodel)!
                 let entry = SourceImageEntry(date: entryDate,
                                               image: image,
@@ -133,6 +134,7 @@ extension HomeProvider {
                         category: Category?
     ) -> Timeline<SourceImageEntry> {
         
+        let durationAmination: Double = 300
         var entries: [SourceImageEntry] = []
         var images: [UIImage] = []
         switch family {
@@ -153,7 +155,7 @@ extension HomeProvider {
         
         let delayAnimation = viewModel.category?.delayAnimation ?? 1
         
-        let count = Int(600 / (Double(images.count) * (delayAnimation == 0 ? 1 : delayAnimation))) + 1
+        let count = Int(durationAmination / (Double(images.count) * (delayAnimation == 0 ? 1 : delayAnimation))) + 1
         
         
         if type == .placeholder {
@@ -169,9 +171,10 @@ extension HomeProvider {
         }
         
         let currentDate = Date()
+        let numberImage = images.count
         for i in 0 ..< count {
             for (key, image) in images.enumerated() {
-                let entryDate = currentDate.addingTimeInterval(Double(key + i * 60  ) * delayAnimation)
+                let entryDate = currentDate.addingTimeInterval(Double(key + i * numberImage) * delayAnimation)
                 let entry = SourceImageEntry(date: entryDate,
                                              image: image,
                                              size: size,
@@ -185,7 +188,7 @@ extension HomeProvider {
         }
 
         
-        let reloadDate = currentDate.addingTimeInterval(600)
+        let reloadDate = currentDate.addingTimeInterval(durationAmination)
         return Timeline(entries: entries, policy: .after(reloadDate))
 
     }

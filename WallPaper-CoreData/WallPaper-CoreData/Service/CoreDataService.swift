@@ -14,6 +14,7 @@ class CoreDataService {
     
     static let shared = CoreDataService()
     
+    //MARK: - Home
     func getAllCategory() -> [Category] {
         let request = Category.fetchRequest()
         

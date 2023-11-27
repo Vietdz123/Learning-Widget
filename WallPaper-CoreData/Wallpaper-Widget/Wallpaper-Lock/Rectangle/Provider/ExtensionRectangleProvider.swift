@@ -14,10 +14,17 @@ extension RectangleProvider {
     func getProviderDigitalAndRoutine(viewModel: RectangleViewModel,
                                       configuration: LockRectangleConfigurationAppIntent,
                                       size: CGSize,
-                                      isDigital: Bool = true
-    ) -> Timeline<RectangleEntry> {
+                                      isDigital: Bool = true,
+                                      category: CategoryLock?
+    ) -> Timeline<RectangleEntry
+    
+    > {
         
-        let image = viewModel.currentImage
+        let images = configuration.imageSrc.getImages()
+        category?.updateNumberRectImage(number: Double(images.count))
+
+        
+        let image = category?.getCurrentImage(images: images) ?? UIImage(named: AssetConstant.imagePlacehodel)!
         let type = configuration.imageSrc.getLockType()
         
         let entry = RectangleEntry(date: .now,
@@ -34,52 +41,53 @@ extension RectangleProvider {
         }
     }
     
-    
+
     
     func getProviderGif(viewModel: RectangleViewModel,
                         configuration: LockRectangleConfigurationAppIntent,
-                        size: CGSize
+                        size: CGSize,
+                        category: CategoryLock?
     ) -> Timeline<RectangleEntry> {
         
+        let durationAnimation: Double = 60
         var entries: [RectangleEntry] = []
+        let images = configuration.imageSrc.getImages()
+        category?.updateNumberRectImage(number: Double(images.count))
         
-        let type = configuration.imageSrc.getLockType()        
-        let images = viewModel.images
-    
-        var imageForTimeline: [UIImage] = []
+        
+        let type = configuration.imageSrc.getLockType()
         let delayAnimation = viewModel.category?.delayAnimation ?? 1
         
-        let count = Int(30 / (Double(images.count) * (delayAnimation == 0 ? 1 : delayAnimation))) + 1
-        
-        for _ in 0 ..< count {
-            imageForTimeline.append(contentsOf: images)
-        }
-        print("DEBUG: \(count) count and \(type) and \(images.count)")
-        
+        let count = Int(durationAnimation / (Double(images.count) * (delayAnimation == 0 ? 1 : delayAnimation))) + 1
+        print("DEBUG: \(count) count")
         
         if type == .placeholder {
             let entry = RectangleEntry(date: .now,
-                                       image: imageForTimeline.first ?? UIImage(named: AssetConstant.imagePlacehodel)!,
+                                       image: UIImage(named: AssetConstant.imagePlacehodel)!,
                                        size: size,
                                        type: type,
                                        imgViewModel: viewModel,
                                        imgSrc: configuration.imageSrc)
-            return Timeline(entries: [entry], policy: .atEnd)
+            return Timeline(entries: [entry], policy: .never)
         }
         
         let currentDate = Date()
-        for (key, image) in imageForTimeline.enumerated() {
-            let entryDate = currentDate.addingTimeInterval(Double(key) * delayAnimation)
-            let entry = RectangleEntry(date: entryDate,
-                                       image: image,
-                                       size: size,
-                                       type: type,
-                                       imgViewModel: viewModel,
-                                       imgSrc: configuration.imageSrc)
-            entries.append(entry)
+        let numberImage = images.count
+        for i in 0 ..< count {
+            for (key, image) in images.enumerated() {
+                let entryDate = currentDate.addingTimeInterval(Double(key + i * numberImage) * delayAnimation)
+                let entry = RectangleEntry(date: entryDate,
+                                           image: image,
+                                           size: size,
+                                           type: type,
+                                           imgViewModel: viewModel,
+                                           imgSrc: configuration.imageSrc)
+                entries.append(entry)
+            }
         }
+
         
-        let reloadDate = currentDate.addingTimeInterval(30)
+        let reloadDate = currentDate.addingTimeInterval(300)
         return Timeline(entries: entries, policy: .after(reloadDate))
 
     }
