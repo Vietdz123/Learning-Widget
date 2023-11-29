@@ -81,6 +81,37 @@ enum RoutinMonitorType: String, CaseIterable {
     
 }
 
+enum DigitalFriendType: CaseIterable, Equatable {
+    static var allCases: [DigitalFriendType] = [.changeBackground, .delayActive(true)]
+    
+    
+    case changeBackground
+    case delayActive(Bool)
+    
+    var nameId: String {
+        switch self {
+        case .changeBackground:
+            return "digital_friend_change_background"
+        case .delayActive:
+            return "digital_friend_delay_active"
+        }
+    }
+    
+    static func getType(name: String) -> DigitalFriendType {
+        
+        for type in DigitalFriendType.allCases {
+            if type.nameId == name {
+                return type
+            }
+        }
+        
+        return .changeBackground
+        
+    }
+    
+}
+
+
 
 enum SoundType: String, CaseIterable {
     

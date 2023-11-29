@@ -99,6 +99,13 @@
 		049024F22B0E103C00481973 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049024EB2B0E103C00481973 /* Item+CoreDataClass.swift */; };
 		049024F32B0E103C00481973 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049024EC2B0E103C00481973 /* Category+CoreDataClass.swift */; };
 		049024F42B0E103C00481973 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049024EC2B0E103C00481973 /* Category+CoreDataClass.swift */; };
+		0498604B2B171FB90027A37F /* HealthExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498604A2B171FB90027A37F /* HealthExtension.swift */; };
+		0498604C2B1720BD0027A37F /* HealthExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498604A2B171FB90027A37F /* HealthExtension.swift */; };
+		049860582B1721FC0027A37F /* HealthWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049860562B1721F10027A37F /* HealthWidgetBundle.swift */; };
+		049860592B1722250027A37F /* HealthAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049860522B1721B80027A37F /* HealthAppIntent.swift */; };
+		0498605A2B1722970027A37F /* HealthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049860502B17217B0027A37F /* HealthProvider.swift */; };
+		0498605B2B1722E10027A37F /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498604E2B1721720027A37F /* HealthView.swift */; };
+		0498605C2B1724E00027A37F /* HealthAppIntent+Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049860542B1721CE0027A37F /* HealthAppIntent+Query.swift */; };
 		04A3921C2B0B0BF10061A573 /* InstagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3921B2B0B0BF10061A573 /* InstagramView.swift */; };
 		04C6B7912B07255A00E9ED63 /* WidgetBundleHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6B7672B07187D00E9ED63 /* WidgetBundleHome.swift */; };
 		04C6B7952B0728E700E9ED63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C6B7942B0728E700E9ED63 /* Preview Assets.xcassets */; };
@@ -203,6 +210,14 @@
 		049024EA2B0E103C00481973 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		049024EB2B0E103C00481973 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		049024EC2B0E103C00481973 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		049860482B171FA90027A37F /* HealthItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HealthItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		049860492B171FA90027A37F /* HealthItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HealthItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0498604A2B171FB90027A37F /* HealthExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthExtension.swift; sourceTree = "<group>"; };
+		0498604E2B1721720027A37F /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
+		049860502B17217B0027A37F /* HealthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthProvider.swift; sourceTree = "<group>"; };
+		049860522B1721B80027A37F /* HealthAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAppIntent.swift; sourceTree = "<group>"; };
+		049860542B1721CE0027A37F /* HealthAppIntent+Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HealthAppIntent+Query.swift"; sourceTree = "<group>"; };
+		049860562B1721F10027A37F /* HealthWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthWidgetBundle.swift; sourceTree = "<group>"; };
 		04A3921B2B0B0BF10061A573 /* InstagramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramView.swift; sourceTree = "<group>"; };
 		04C6B7672B07187D00E9ED63 /* WidgetBundleHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBundleHome.swift; sourceTree = "<group>"; };
 		04C6B7942B0728E700E9ED63 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -256,6 +271,7 @@
 				04C6B7972B07296000E9ED63 /* Info.plist */,
 				0485EAF02B01C8DB00C2C6DF /* Assets.xcassets */,
 				04C6B7672B07187D00E9ED63 /* WidgetBundleHome.swift */,
+				0498604D2B17215B0027A37F /* Health */,
 				04C6B77A2B071D1600E9ED63 /* Wallpaper-Lock */,
 				04C6B7962B0728F600E9ED63 /* Wallpaper-Home */,
 			);
@@ -374,6 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				0485EAFA2B01C8FD00C2C6DF /* WidgetModel.xcdatamodeld */,
+				049860472B171F330027A37F /* Health */,
 				049024C92B0E0B7E00481973 /* Lock */,
 				0490249B2B0E035700481973 /* Home */,
 				0485EB192B01CAA800C2C6DF /* Extension */,
@@ -385,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				0485EB242B01CC3F00C2C6DF /* CategoryExtension.swift */,
+				0498604A2B171FB90027A37F /* HealthExtension.swift */,
 				0489A0E22B103AB700399ED9 /* CategoryLockExtension.swift */,
 				0485EB262B01CCEA00C2C6DF /* ItemExtension.swift */,
 				0485EB282B01D6AF00C2C6DF /* DataController.swift */,
@@ -583,6 +601,27 @@
 				D1DFBE382B11B9FB007512EE /* CategoryLock+CoreDataProperties.swift */,
 			);
 			path = Lock;
+			sourceTree = "<group>";
+		};
+		049860472B171F330027A37F /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				049860482B171FA90027A37F /* HealthItem+CoreDataClass.swift */,
+				049860492B171FA90027A37F /* HealthItem+CoreDataProperties.swift */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
+		0498604D2B17215B0027A37F /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				0498604E2B1721720027A37F /* HealthView.swift */,
+				049860502B17217B0027A37F /* HealthProvider.swift */,
+				049860522B1721B80027A37F /* HealthAppIntent.swift */,
+				049860542B1721CE0027A37F /* HealthAppIntent+Query.swift */,
+				049860562B1721F10027A37F /* HealthWidgetBundle.swift */,
+			);
+			path = Health;
 			sourceTree = "<group>";
 		};
 		04C6B77A2B071D1600E9ED63 /* Wallpaper-Lock */ = {
@@ -784,6 +823,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049860592B1722250027A37F /* HealthAppIntent.swift in Sources */,
 				049024F22B0E103C00481973 /* Item+CoreDataClass.swift in Sources */,
 				0489A15F2B10A10D00399ED9 /* ExtensionSquareProvider.swift in Sources */,
 				0489A11B2B1062E700399ED9 /* PlayButtonIntent.swift in Sources */,
@@ -791,6 +831,7 @@
 				045673AD2B0210CB00D7B28F /* HomeNetworkManager.swift in Sources */,
 				045673CB2B0222C600D7B28F /* SingleRoutineButtonIntent.swift in Sources */,
 				045673A82B0210BD00D7B28F /* WDHomeFolderType.swift in Sources */,
+				049860582B1721FC0027A37F /* HealthWidgetBundle.swift in Sources */,
 				045673972B02088500D7B28F /* CoreDataService.swift in Sources */,
 				0489A11C2B1062EB00399ED9 /* RectangleViewModel.swift in Sources */,
 				045673A02B02100400D7B28F /* WallPaperView.swift in Sources */,
@@ -828,6 +869,7 @@
 				0489A13F2B10812400399ED9 /* LockSquareWidget.swift in Sources */,
 				0489A15C2B109F8500399ED9 /* AppEntity+QuerySquare.swift in Sources */,
 				0475C18B2B0C90E5002DD99D /* ExtensionProvider.swift in Sources */,
+				0498605A2B1722970027A37F /* HealthProvider.swift in Sources */,
 				0456739A2B020FD100D7B28F /* Wallpaper_WidgetBundle.swift in Sources */,
 				049024F42B0E103C00481973 /* Category+CoreDataClass.swift in Sources */,
 				045673892B0206E200D7B28F /* WidgetModel.xcdatamodeld in Sources */,
@@ -842,9 +884,12 @@
 				045673C82B0222C600D7B28F /* ChangeBackgroundIntent.swift in Sources */,
 				0489A1202B10641F00399ED9 /* RectangleWidgetView.swift in Sources */,
 				045673AB2B0210BD00D7B28F /* FolderModel.swift in Sources */,
+				0498604C2B1720BD0027A37F /* HealthExtension.swift in Sources */,
 				0489A1582B108B7500399ED9 /* AppEntity+Query.swift in Sources */,
 				04C6B7912B07255A00E9ED63 /* WidgetBundleHome.swift in Sources */,
+				0498605C2B1724E00027A37F /* HealthAppIntent+Query.swift in Sources */,
 				045673C32B0222BB00D7B28F /* BackgroudView.swift in Sources */,
+				0498605B2B1722E10027A37F /* HealthView.swift in Sources */,
 				049024EE2B0E103C00481973 /* Category+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -861,6 +906,7 @@
 				0489A0F22B1041A800399ED9 /* WDGifLockModel.swift in Sources */,
 				0485EB272B01CCEA00C2C6DF /* ItemExtension.swift in Sources */,
 				0485EB0E2B01CA6A00C2C6DF /* HomeNetworkManager.swift in Sources */,
+				0498604B2B171FB90027A37F /* HealthExtension.swift in Sources */,
 				0485EB092B01CA4600C2C6DF /* WeekendDayModel.swift in Sources */,
 				049024F12B0E103C00481973 /* Item+CoreDataClass.swift in Sources */,
 				04A3921C2B0B0BF10061A573 /* InstagramView.swift in Sources */,

@@ -29,6 +29,10 @@ extension Category {
         routineType ?? "Unknown name"
     }
     
+    public var unwrappedDigitalType: String {
+        digitalType ?? "Unknown name"
+    }
+    
     public var unwrappedSoundType: String {
         soundType ?? "Unknown name"
     }

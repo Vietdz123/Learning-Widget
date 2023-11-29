@@ -49,7 +49,11 @@ extension RectangleProvider {
                         category: CategoryLock?
     ) -> Timeline<RectangleEntry> {
         
-        let durationAnimation: Double = 60
+        var durationAnimation: Double = 60
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            durationAnimation = 30
+        }
+        
         var entries: [RectangleEntry] = []
         let images = configuration.imageSrc.getImages()
         category?.updateNumberRectImage(number: Double(images.count))

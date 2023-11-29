@@ -36,22 +36,58 @@ extension HomeProvider {
         let type = configuration.imageSrc.getFolderType()
         let btnCLModel = configuration.imageSrc.getButtonChecklistModel()
         let routineType = configuration.imageSrc.getRoutineType()
+        let digitalType: DigitalFriendType = (configuration.imageSrc.getDigitalType() == .changeBackground) ? .changeBackground : .delayActive(true)
+        let delayAnimation = viewModel.category?.delayAnimation ?? 1
         category?.updateNumberCheckedImage(number: Double(btnCLModel.checkImage.count))
         
-        let entry = SourceImageEntry(date: .now,
+        var entry = SourceImageEntry(date: .now,
                                     image: image,
                                     size: size,
                                     type: type,
                                     btnChecklistModel: btnCLModel,
                                     imgViewModel: viewModel,
                                     imgSrc: configuration.imageSrc,
-                                    routineType: routineType)
-        
-        if isDigital {
-            return Timeline(entries: [entry], policy: .never)
-        } else {
+                                    routineType: routineType,
+                                    digitalType: digitalType)
+
+        if !isDigital  {
+            print("DEBUG: siuuu1")
             return Timeline(entries: [entry], policy: .never)
         }
+        
+        if digitalType == .changeBackground {
+            print("DEBUG: siuuu2")
+            return Timeline(entries: [entry], policy: .never)
+        }
+        
+        if (category?.currentIndexDigitalFriend ?? 0).truncatingRemainder(dividingBy: 2) == 0 {
+            print("DEBUG: siuuu3")
+            return Timeline(entries: [entry], policy: .never)
+        } else {
+            print("DEBUG: siuuu4")
+            category?.updateCurrentIndex(isRect: family == .systemMedium)
+            let image = category?.getCurrentImage(images: images) ?? UIImage(named: AssetConstant.imagePlacehodel)!
+            entry.digitalType = .delayActive(false)
+            let date = Date().addingTimeInterval(delayAnimation)
+            let entryDelay = SourceImageEntry(date: date,
+                                              image: image,
+                                              size: size,
+                                              type: type,
+                                              btnChecklistModel: btnCLModel,
+                                              imgViewModel: viewModel,
+                                              imgSrc: configuration.imageSrc,
+                                              routineType: routineType,
+                                              digitalType: .delayActive(true))
+            
+            return Timeline(entries: [entry, entryDelay], policy: .never)
+        }
+
+
+
+
+        
+            
+
     }
     
     func getProviderSounds(viewModel: ImageDataViewModel,
@@ -89,7 +125,7 @@ extension HomeProvider {
         let type = configuration.imageSrc.getFolderType()
         let btnCLModel = configuration.imageSrc.getButtonChecklistModel()
         let routineType = configuration.imageSrc.getRoutineType()
-        let dalayAnimation = category?.delayAnimation ?? 1
+        let delayAnimation = category?.delayAnimation ?? 1
         
         let firstEntry = SourceImageEntry(date: .now,
                                           image: image,
@@ -106,10 +142,10 @@ extension HomeProvider {
             var count: Double = 1
             
             while category?.isFirstImage == false {
-                category?.updateCurrentIndex()
+                category?.updateCurrentIndex(isRect: family == .systemMedium)
                 count += 1
                 
-                let entryDate = Date().addingTimeInterval(dalayAnimation * count)
+                let entryDate = Date().addingTimeInterval(delayAnimation * count)
                 let image = category?.getCurrentImage(images: images) ?? UIImage(named: AssetConstant.imagePlacehodel)!
                 let entry = SourceImageEntry(date: entryDate,
                                               image: image,
@@ -134,7 +170,10 @@ extension HomeProvider {
                         category: Category?
     ) -> Timeline<SourceImageEntry> {
         
-        let durationAmination: Double = 300
+        var durationAnimation: Double = 240
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            durationAnimation = 210
+        }
         var entries: [SourceImageEntry] = []
         var images: [UIImage] = []
         switch family {
@@ -155,7 +194,7 @@ extension HomeProvider {
         
         let delayAnimation = viewModel.category?.delayAnimation ?? 1
         
-        let count = Int(durationAmination / (Double(images.count) * (delayAnimation == 0 ? 1 : delayAnimation))) + 1
+        let count = Int(durationAnimation / (Double(images.count) * (delayAnimation == 0 ? 1 : delayAnimation))) + 1
         
         
         if type == .placeholder {
@@ -188,7 +227,7 @@ extension HomeProvider {
         }
 
         
-        let reloadDate = currentDate.addingTimeInterval(durationAmination)
+        let reloadDate = currentDate.addingTimeInterval(durationAnimation)
         return Timeline(entries: entries, policy: .after(reloadDate))
 
     }

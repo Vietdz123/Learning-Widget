@@ -17,6 +17,48 @@ struct SourceImageEntry: TimelineEntry {
     let imgViewModel: ImageDataViewModel
     let imgSrc: ImageSource
     let routineType: RoutinMonitorType
+    var digitalType: DigitalFriendType
+    
+    init(date: Date,
+         image: UIImage,
+         size: CGSize,
+         type: WDHomeFolderType,
+         btnChecklistModel: ButtonCheckListModel,
+         imgViewModel: ImageDataViewModel,
+         imgSrc: ImageSource,
+         routineType: RoutinMonitorType)
+    {
+        self.date = date
+        self.image = image
+        self.size = size
+        self.type = type
+        self.btnChecklistModel = btnChecklistModel
+        self.imgViewModel = imgViewModel
+        self.imgSrc = imgSrc
+        self.routineType = routineType
+        self.digitalType = .changeBackground
+    }
+    
+    init(date: Date,
+         image: UIImage,
+         size: CGSize,
+         type: WDHomeFolderType,
+         btnChecklistModel: ButtonCheckListModel,
+         imgViewModel: ImageDataViewModel,
+         imgSrc: ImageSource,
+         routineType: RoutinMonitorType,
+         digitalType: DigitalFriendType)
+    {
+        self.date = date
+        self.image = image
+        self.size = size
+        self.type = type
+        self.btnChecklistModel = btnChecklistModel
+        self.imgViewModel = imgViewModel
+        self.imgSrc = imgSrc
+        self.routineType = routineType
+        self.digitalType = digitalType
+    }
 }
 
 @available(iOS 17.0, *)

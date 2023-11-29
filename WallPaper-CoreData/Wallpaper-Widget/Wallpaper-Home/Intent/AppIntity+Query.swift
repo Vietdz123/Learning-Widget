@@ -43,6 +43,13 @@ struct ImageSource: AppEntity {
         
     }
     
+    func getDigitalType() -> DigitalFriendType {
+        guard let cate = getCategory() else { return .changeBackground }
+        
+        return CoreDataService.shared.getDigitalType(with: cate.unwrappedDigitalType)
+        
+    }
+    
     func getSoundType() -> SoundType {
         guard let cate = getCategory() else { return .circle }
         

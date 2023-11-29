@@ -47,7 +47,10 @@ extension SquareProvider {
                         category: CategoryLock?
     ) -> Timeline<SquareEntry> {
         
-        let durationAnimation: Double = 60
+        var durationAnimation: Double = 60
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            durationAnimation = 30
+        }
         var entries: [SquareEntry] = []
         let images = configuration.imageSrc.getImages()
         category?.updateNumberRectImage(number: Double(images.count))

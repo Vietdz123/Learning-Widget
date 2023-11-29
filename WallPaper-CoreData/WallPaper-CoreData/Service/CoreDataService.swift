@@ -69,7 +69,7 @@ class CoreDataService {
     
     func getCategory(name: String) -> Category? {
         
-        let query = NSPredicate(format: "%K CONTAINS %@", #keyPath(Category.name), name)
+        let query = NSPredicate(format: "%K == %@", #keyPath(Category.name), name)
         let request: NSFetchRequest<Category> = Category.fetchRequest()
         request.predicate = query
         
@@ -85,6 +85,10 @@ class CoreDataService {
     
     func getRoutineType(with nameRoutine: String) -> RoutinMonitorType {
         return RoutinMonitorType.getType(name: nameRoutine)
+    }
+    
+    func getDigitalType(with nameDigital: String) -> DigitalFriendType {
+        return DigitalFriendType.getType(name: nameDigital)
     }
     
     func getSoundType(with nameSound: String) -> SoundType {
@@ -148,7 +152,7 @@ extension CoreDataService {
     
     func getAllLockRectCategory(family: FamilyLock) -> [CategoryLock] {
         
-        let queryFamily = NSPredicate(format: "%K CONTAINS %@", #keyPath(CategoryLock.familyType), family.name)
+        let queryFamily = NSPredicate(format: "%K == %@", #keyPath(CategoryLock.familyType), family.name)
         
         let request: NSFetchRequest<CategoryLock> = CategoryLock.fetchRequest()
         request.predicate = queryFamily
@@ -179,8 +183,8 @@ extension CoreDataService {
     
     func getLockCategory(name: String, family: FamilyLock) -> CategoryLock? {
         
-        let queryName = NSPredicate(format: "%K CONTAINS %@", #keyPath(CategoryLock.name), name)
-        let queryFamily = NSPredicate(format: "%K CONTAINS %@", #keyPath(CategoryLock.familyType), family.name)
+        let queryName = NSPredicate(format: "%K == %@", #keyPath(CategoryLock.name), name)
+        let queryFamily = NSPredicate(format: "%K == %@", #keyPath(CategoryLock.familyType), family.name)
         let query = NSCompoundPredicate(andPredicateWithSubpredicates: [queryName, queryFamily])
         
         let request: NSFetchRequest<CategoryLock> = CategoryLock.fetchRequest()
@@ -235,7 +239,7 @@ extension CoreDataService {
                 
             } catch {
                 print("DEBUG: fatal error \(error.localizedDescription)")
-                
+//                fatalError("fatal \(error.localizedDescription)")
                 
             }
         }

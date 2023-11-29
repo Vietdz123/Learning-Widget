@@ -87,6 +87,10 @@ class WDHomeNetworkManager {
         } else if folderType == .sound {
             let soundType = SoundType.getType(name: data.tags[0].name).nameId
             category.soundType = soundType
+        } else if folderType == .digitalFriend {
+            let digitalType = DigitalFriendType.getType(name: data.tags.first?.name ?? DigitalFriendType.changeBackground.nameId)
+            category.digitalType = digitalType.nameId
+            
         }
         
         var widgetPath = data.path
@@ -152,8 +156,9 @@ extension WDHomeNetworkManager {
         components.queryItems = [
             URLQueryItem(name: "with", value: WDNetworkManagerConstant.query),
             URLQueryItem(name: "limit", value: "\(100)"),
-            URLQueryItem(name: "where", value: "active+0"),
-            URLQueryItem(name: "dev", value: "1"),
+            URLQueryItem(name: "offset", value: "\(30)"),
+//            URLQueryItem(name: "where", value: "active+0"),
+//            URLQueryItem(name: "dev", value: "1"),
         ]
         
         return components.url

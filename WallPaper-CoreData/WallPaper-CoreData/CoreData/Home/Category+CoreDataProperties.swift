@@ -23,6 +23,7 @@ extension Category {
     @NSManaged public var hasSound: Bool
     @NSManaged public var name: String?
     @NSManaged public var routineType: String?
+    @NSManaged public var digitalType: String?
     @NSManaged public var shouldPlaySound: Bool
     @NSManaged public var soundType: String?
     @NSManaged public var items: NSSet?

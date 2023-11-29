@@ -11,6 +11,7 @@ import WidgetKit
 @main
 struct WidgetBundleHome: WidgetBundle {
     var body: some Widget {
+        HealthWidget()
         WallpaperWidget()
         LockRectangleWidget()        
 //        LockInlineWidget()
