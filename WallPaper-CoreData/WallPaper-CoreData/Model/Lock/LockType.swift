@@ -16,6 +16,11 @@ enum LockType: String, CaseIterable {
     case icon = "Icon"
     case placeholder = "Placeholder"
     
+}
+
+enum IconType: String, CaseIterable {
     
+    case background = "background"
+    case mainIcon = "mainIcon"
     
 }

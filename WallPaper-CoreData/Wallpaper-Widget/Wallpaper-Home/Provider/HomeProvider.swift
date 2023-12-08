@@ -34,13 +34,25 @@ struct HomeProvider: AppIntentTimelineProvider {
         
         switch folderType {
         case .digitalFriend, .routineMonitor, .placeholder:
-            let provider = getProviderDigitalAndRoutine(viewModel: viewModel, configuration: configuration, size: context.displaySize, family: context.family, category: cate)
+            let provider = getProviderDigitalAndRoutine(viewModel: viewModel, 
+                                                        configuration: configuration,
+                                                        size: context.displaySize,
+                                                        family: context.family,
+                                                        category: cate)
             return provider
         case .sound:
-            let provider = getProviderSounds(viewModel: viewModel, configuration: configuration, size: context.displaySize, family: context.family, category: cate)
+            let provider = getProviderSounds(viewModel: viewModel, 
+                                             configuration: configuration,
+                                             size: context.displaySize,
+                                             family: context.family,
+                                             category: cate)
             return provider
         case .gif:
-            let provider = getProviderGif(viewModel: viewModel, configuration: configuration, size: context.displaySize, family: context.family, category: cate)
+            let provider = getProviderGif(viewModel: viewModel, 
+                                          configuration: configuration,
+                                          size: context.displaySize,
+                                          family: context.family,
+                                          category: cate)
             return provider
         }
         

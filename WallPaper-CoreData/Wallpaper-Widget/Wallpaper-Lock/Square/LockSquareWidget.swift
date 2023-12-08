@@ -23,6 +23,7 @@ struct LockSquareWidget: Widget {
                 .containerBackground(.fill.tertiary, for: .widget)
         }
         .contentMarginsDisabled()
+//        .containerBackgroundRemovable(false)
         .supportedFamilies([ .accessoryCircular ])
         
     }

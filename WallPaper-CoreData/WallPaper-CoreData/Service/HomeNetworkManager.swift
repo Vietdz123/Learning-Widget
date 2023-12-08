@@ -13,6 +13,7 @@ enum WDNetworkManagerConstant {
     static let host = "widget.eztechglobal.com"
     static let pathWidget = "/api/v1/widgets"
     static let pathGif = "/api/v1/gifs"
+    static let pathIcon = "/api/v1/icons"
     static let query = "category+id,name-apps+id,name-tags+id,name"
     
 }

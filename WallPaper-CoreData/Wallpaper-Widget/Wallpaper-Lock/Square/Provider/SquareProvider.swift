@@ -27,11 +27,42 @@ struct SquareProvider: AppIntentTimelineProvider {
         let viewModel = SquareViewModel()
         let cate = configuration.imageSrc.getCategory()
         viewModel.loadData(category: cate)
+        var lockType = configuration.imageSrc.getLockType()
+        
+        switch lockType {
+        case .gif:
+            let provider = getProviderGif(viewModel: viewModel, configuration: configuration, size: context.displaySize, category: cate)
+            
+            return provider
+            
+        case .quotes:
+            let provider = getProviderGif(viewModel: viewModel, configuration: configuration, size: context.displaySize, category: cate)
+            
+            return provider
+            
+        case .inline:
+            let provider = getProviderGif(viewModel: viewModel, configuration: configuration, size: context.displaySize, category: cate)
+            
+            return provider
+            
+        case .countdown:
+            let provider = getProviderGif(viewModel: viewModel, configuration: configuration, size: context.displaySize, category: cate)
+            
+            return provider
+            
+        case .icon:
+            let provider = getProviderIcon(viewModel: viewModel, configuration: configuration, size: context.displaySize, category: cate)
+            return provider
+            
+        case .placeholder:
+            let provider = getProviderGif(viewModel: viewModel, configuration: configuration, size: context.displaySize, category: cate)
+            
+            return provider
+        }
+        
         
 
         
-        let provider = getProviderGif(viewModel: viewModel, configuration: configuration, size: context.displaySize, category: cate)
-        return provider
         
     }
 }

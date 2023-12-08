@@ -39,7 +39,28 @@ extension SquareProvider {
         }
     }
     
+    func getProviderIcon(viewModel: SquareViewModel,
+                         configuration: LockSquareConfigurationAppIntent,
+                         size: CGSize,
+                         category: CategoryLock?
+    ) -> Timeline<SquareEntry> {
+        
+        let iconImage = configuration.imageSrc.getIconImage(type: .mainIcon)
+        let backgroundImage = configuration.imageSrc.getIconImage(type: .background)
+        
+        let type = configuration.imageSrc.getLockType()
+        
+        let entry = SquareEntry(date: .now,
+                                image: iconImage,
+                                size: size,
+                                type: type,
+                                imgViewModel: viewModel,
+                                imgSrc: configuration.imageSrc,
+                                backgroundImage: backgroundImage)
+        
+        return Timeline(entries: [entry], policy: .never)
 
+    }
     
     func getProviderGif(viewModel: SquareViewModel,
                         configuration: LockSquareConfigurationAppIntent,

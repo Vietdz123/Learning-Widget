@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AVFoundation
+import Photos
 
 struct ContentView: View {
     
@@ -15,18 +16,25 @@ struct ContentView: View {
     
     var body: some View {
         ScrollView(.vertical) {
-            VStack {
+            VStack(spacing: 24) {
+                
                 Button(action: {
-                    
                     WDGifNetworkManager.shared.requestApi { _ in
                         print("DEBUG: Done")
                     }
                 }, label: {
-                    Text("Load Data Lock")
+                    Text("Load Data Gif")
                         .padding(.bottom, 40)
                 })
                 
-                
+                Button(action: {
+                    WDIconNetworkManager.shared.requestApi { _ in
+                        print("DEBUG: Done")
+                    }
+                    
+                }, label: {
+                    Text("Load Data Icon")
+                })
                 
                 Button(action: {
                     WDHomeNetworkManager.shared.requestApi { _ in
@@ -37,20 +45,24 @@ struct ContentView: View {
                     Text("Load Data Home")
                 })
                 
+                
+                
             }
             .padding()
             
-            ForEach(namesHealth, id: \.self) { name in
-                Button(action: {
-                    CoreDataService.shared.saveHealthItem(name: name)
-                }, label: {
-                    Text("\(name)")
-                })
-            }
         }
-
-    }
-
         
+    }
+    
+    
 }
 
+class ImageSaver: NSObject {
+    func writeToPhotoAlbum(image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveCompleted), nil)
+    }
+    
+    @objc func saveCompleted(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        print("Save finished!")
+    }
+}

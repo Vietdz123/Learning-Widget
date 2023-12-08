@@ -99,6 +99,8 @@
 		049024F22B0E103C00481973 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049024EB2B0E103C00481973 /* Item+CoreDataClass.swift */; };
 		049024F32B0E103C00481973 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049024EC2B0E103C00481973 /* Category+CoreDataClass.swift */; };
 		049024F42B0E103C00481973 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049024EC2B0E103C00481973 /* Category+CoreDataClass.swift */; };
+		0492E09F2B22B5AB0052D294 /* IconNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492E09E2B22B5AB0052D294 /* IconNetworkManager.swift */; };
+		0492E0A12B22B7FF0052D294 /* WDIconLockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492E0A02B22B7FF0052D294 /* WDIconLockModel.swift */; };
 		0498604B2B171FB90027A37F /* HealthExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498604A2B171FB90027A37F /* HealthExtension.swift */; };
 		0498604C2B1720BD0027A37F /* HealthExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498604A2B171FB90027A37F /* HealthExtension.swift */; };
 		049860582B1721FC0027A37F /* HealthWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049860562B1721F10027A37F /* HealthWidgetBundle.swift */; };
@@ -106,7 +108,11 @@
 		0498605A2B1722970027A37F /* HealthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049860502B17217B0027A37F /* HealthProvider.swift */; };
 		0498605B2B1722E10027A37F /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498604E2B1721720027A37F /* HealthView.swift */; };
 		0498605C2B1724E00027A37F /* HealthAppIntent+Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049860542B1721CE0027A37F /* HealthAppIntent+Query.swift */; };
+		0498605F2B188EEC0027A37F /* img_ez.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0498605D2B188EEC0027A37F /* img_ez.mov */; };
+		049860602B188EEC0027A37F /* img_myscreen.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0498605E2B188EEC0027A37F /* img_myscreen.mov */; };
+		049860632B1899B20027A37F /* NRNG9365.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 049860622B1899B20027A37F /* NRNG9365.MOV */; };
 		04A3921C2B0B0BF10061A573 /* InstagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3921B2B0B0BF10061A573 /* InstagramView.swift */; };
+		04AF2F9A2B22C24C007347A7 /* SquareIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF2F992B22C24C007347A7 /* SquareIconView.swift */; };
 		04C6B7912B07255A00E9ED63 /* WidgetBundleHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6B7672B07187D00E9ED63 /* WidgetBundleHome.swift */; };
 		04C6B7952B0728E700E9ED63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C6B7942B0728E700E9ED63 /* Preview Assets.xcassets */; };
 		04C6B7982B07297500E9ED63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0485EAF02B01C8DB00C2C6DF /* Assets.xcassets */; };
@@ -210,6 +216,8 @@
 		049024EA2B0E103C00481973 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		049024EB2B0E103C00481973 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		049024EC2B0E103C00481973 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0492E09E2B22B5AB0052D294 /* IconNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconNetworkManager.swift; sourceTree = "<group>"; };
+		0492E0A02B22B7FF0052D294 /* WDIconLockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDIconLockModel.swift; sourceTree = "<group>"; };
 		049860482B171FA90027A37F /* HealthItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HealthItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		049860492B171FA90027A37F /* HealthItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HealthItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0498604A2B171FB90027A37F /* HealthExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthExtension.swift; sourceTree = "<group>"; };
@@ -218,7 +226,11 @@
 		049860522B1721B80027A37F /* HealthAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAppIntent.swift; sourceTree = "<group>"; };
 		049860542B1721CE0027A37F /* HealthAppIntent+Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HealthAppIntent+Query.swift"; sourceTree = "<group>"; };
 		049860562B1721F10027A37F /* HealthWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthWidgetBundle.swift; sourceTree = "<group>"; };
+		0498605D2B188EEC0027A37F /* img_ez.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = img_ez.mov; sourceTree = "<group>"; };
+		0498605E2B188EEC0027A37F /* img_myscreen.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = img_myscreen.mov; sourceTree = "<group>"; };
+		049860622B1899B20027A37F /* NRNG9365.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = NRNG9365.MOV; sourceTree = "<group>"; };
 		04A3921B2B0B0BF10061A573 /* InstagramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramView.swift; sourceTree = "<group>"; };
+		04AF2F992B22C24C007347A7 /* SquareIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareIconView.swift; sourceTree = "<group>"; };
 		04C6B7672B07187D00E9ED63 /* WidgetBundleHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBundleHome.swift; sourceTree = "<group>"; };
 		04C6B7942B0728E700E9ED63 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		04C6B7972B07296000E9ED63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -348,6 +360,9 @@
 				0485EAEE2B01C8DA00C2C6DF /* ContentView.swift */,
 				04A3921B2B0B0BF10061A573 /* InstagramView.swift */,
 				048407A12B047D8500381846 /* Info.plist */,
+				049860622B1899B20027A37F /* NRNG9365.MOV */,
+				0498605D2B188EEC0027A37F /* img_ez.mov */,
+				0498605E2B188EEC0027A37F /* img_myscreen.mov */,
 				0456736C2B02023C00D7B28F /* WallPaper-CoreData.entitlements */,
 				0485EB182B01CA8E00C2C6DF /* CoreData */,
 				0485EAFF2B01CA3200C2C6DF /* Model */,
@@ -364,6 +379,7 @@
 				0485EB0C2B01CA6800C2C6DF /* HomeNetworkManager.swift */,
 				0489A0F42B1043CC00399ED9 /* GifNetworkManager.swift */,
 				045673952B02088500D7B28F /* CoreDataService.swift */,
+				0492E09E2B22B5AB0052D294 /* IconNetworkManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -443,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				0489A0F12B1041A800399ED9 /* WDGifLockModel.swift */,
+				0492E0A02B22B7FF0052D294 /* WDIconLockModel.swift */,
 				0489A0FA2B1048BA00399ED9 /* LockGifType.swift */,
 			);
 			path = Gif;
@@ -553,6 +570,7 @@
 			children = (
 				0489A13C2B1080DD00399ED9 /* SquareWidgetView.swift */,
 				0489A15D2B10A0B600399ED9 /* SquareBackgroundView.swift */,
+				04AF2F992B22C24C007347A7 /* SquareIconView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -764,8 +782,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0498605F2B188EEC0027A37F /* img_ez.mov in Resources */,
+				049860602B188EEC0027A37F /* img_myscreen.mov in Resources */,
 				04C6B7952B0728E700E9ED63 /* Preview Assets.xcassets in Resources */,
 				0485EAF12B01C8DB00C2C6DF /* Assets.xcassets in Resources */,
+				049860632B1899B20027A37F /* NRNG9365.MOV in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -824,6 +845,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				049860592B1722250027A37F /* HealthAppIntent.swift in Sources */,
+				04AF2F9A2B22C24C007347A7 /* SquareIconView.swift in Sources */,
 				049024F22B0E103C00481973 /* Item+CoreDataClass.swift in Sources */,
 				0489A15F2B10A10D00399ED9 /* ExtensionSquareProvider.swift in Sources */,
 				0489A11B2B1062E700399ED9 /* PlayButtonIntent.swift in Sources */,
@@ -903,6 +925,7 @@
 				0485EB052B01CA4600C2C6DF /* ButtonCheckListModel.swift in Sources */,
 				0489A0E32B103AB700399ED9 /* CategoryLockExtension.swift in Sources */,
 				0485EB082B01CA4600C2C6DF /* WDNetworkHomeModel.swift in Sources */,
+				0492E09F2B22B5AB0052D294 /* IconNetworkManager.swift in Sources */,
 				0489A0F22B1041A800399ED9 /* WDGifLockModel.swift in Sources */,
 				0485EB272B01CCEA00C2C6DF /* ItemExtension.swift in Sources */,
 				0485EB0E2B01CA6A00C2C6DF /* HomeNetworkManager.swift in Sources */,
@@ -913,6 +936,7 @@
 				0485EB0F2B01CA6A00C2C6DF /* FileService.swift in Sources */,
 				0489A0FE2B1049AA00399ED9 /* LockType.swift in Sources */,
 				0485EB072B01CA4600C2C6DF /* FolderModel.swift in Sources */,
+				0492E0A12B22B7FF0052D294 /* WDIconLockModel.swift in Sources */,
 				045673962B02088500D7B28F /* CoreDataService.swift in Sources */,
 				0485EB0B2B01CA5200C2C6DF /* WDConstant.swift in Sources */,
 				0485EAEF2B01C8DA00C2C6DF /* ContentView.swift in Sources */,

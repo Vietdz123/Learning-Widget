@@ -57,10 +57,9 @@ class WDGifNetworkManager {
         
         let existCate = CoreDataService.shared.getLockCategory(name: foldername)
         let familyLock = FamilyLock.getType(name: FamilyLock(rawValue: data.type)?.name ?? "").name
-        if let existCate = existCate, let items = existCate.items {
-            existCate.removeFromItems(items)
-
-            self.context.delete(existCate)
+        if let _ = existCate {
+            completion()
+            return
         }
         
         let category = CategoryLock(context: context)

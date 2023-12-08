@@ -225,6 +225,21 @@ extension CoreDataService {
         
         return images
     }
+    
+    func getIconImage(categoryLock: CategoryLock, type: IconType) -> UIImage {
+        
+        let items = categoryLock.itemArray
+        
+        var filterItems = items.filter { item in
+            return item.imageType == type.rawValue
+        }
+        
+        guard let item = filterItems.first else {return UIImage(named: AssetConstant.imagePlacehodel)!}
+        guard let image = FileService.shared.readImage(with: categoryLock.unwrappedName, item: item) else { return UIImage(named: AssetConstant.imagePlacehodel)!
+        }
+        
+        return image
+    }
 }
 
 

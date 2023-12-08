@@ -25,7 +25,9 @@ extension Item {
         relativePath?.appendingPathComponent(unwrappedName)
     }
     
-
+    public var unwrappedImageType: String {
+        imageType ?? "Unknown name"
+    }
     
     
 }

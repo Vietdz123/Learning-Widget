@@ -19,6 +19,18 @@ struct SquareEntry: TimelineEntry {
     let type: LockType
     let imgViewModel: SquareViewModel
     let imgSrc: SquareSource
+    let backgroundImage: UIImage
+
+    init(date: Date, image: UIImage, size: CGSize, type: LockType, imgViewModel: SquareViewModel, imgSrc: SquareSource, backgroundImage: UIImage = UIImage(named: AssetConstant.imagePlacehodel)!) {
+        self.date = date
+        self.image = image
+        self.size = size
+        self.type = type
+        self.imgViewModel = imgViewModel
+        self.imgSrc = imgSrc
+        self.backgroundImage = backgroundImage
+    }
+
 }
 
 @available(iOS 17.0, *)
@@ -35,6 +47,8 @@ struct SquareWidgetView : View {
             SquareBackgroundView(entry: entry)
         case .countdown:
             SquareBackgroundView(entry: entry)
+        case .icon:
+            SquareIconView(entry: entry)
         case .placeholder:
             LockPlaceHolderView(size: entry.size)
         default:

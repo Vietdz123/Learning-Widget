@@ -60,6 +60,13 @@ struct SquareSource: AppEntity {
         return src
     }
     
+    func getIconImage(type: IconType) -> UIImage {
+        guard let cate = getCategory() else { return UIImage(named: AssetConstant.imagePlacehodel)! }
+        
+        return CoreDataService.shared.getIconImage(categoryLock: cate, type: type)
+        
+    }
+    
     
     static var typeDisplayRepresentation: TypeDisplayRepresentation = "Image Viet"
     

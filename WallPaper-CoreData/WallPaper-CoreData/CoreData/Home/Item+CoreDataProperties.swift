@@ -20,5 +20,6 @@ extension Item {
     @NSManaged public var family: String?
     @NSManaged public var name: String?
     @NSManaged public var routine_type: String?
+    @NSManaged public var imageType: String?
 
 }
