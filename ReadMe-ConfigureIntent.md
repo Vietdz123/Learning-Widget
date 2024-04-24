@@ -11,50 +11,50 @@
 Ta thấy ở phần này liệt kê các Option cho User lựa chọn, thì thằng `ConfigurationAppIntent` có nhiệm vụ chính là tạo phần đó. Ta thấy ở ảnh trên có 3 option, ta có thể tương tác và lựa chọn các option đó. Càn chú ý ở hơn phần `Background - Red đỏ`, ở đây ta có thể lựa chọn các màu `xanh, đỏ, cam, ...`. Đọc phần code dưới đây
 
 ```swift
-struct ConfigurationAppIntent: WidgetConfigurationIntent {
-    
-    static var title: LocalizedStringResource = "Configuration viet123"
-    static var description = IntentDescription("This is an viet widget.")
+    struct ConfigurationAppIntent: WidgetConfigurationIntent {
+        
+        static var title: LocalizedStringResource = "Configuration viet123"
+        static var description = IntentDescription("This is an viet widget.")
 
-    // An example configurable parameter.
-    @Parameter(title: "Backgroud color", default: BgColor.blue)
-    var backgroudColor: BgColor
-    
-    @Parameter(title: "Backgroud color", default: "Hello")
-    var name: String
-    
-    @Parameter(title: "Backgroud Siuuuu", default: "qq")
-    var siu: String
-}
+        // An example configurable parameter.
+        @Parameter(title: "Backgroud color", default: BgColor.blue)
+        var backgroudColor: BgColor
+        
+        @Parameter(title: "Backgroud color", default: "Hello")
+        var name: String
+        
+        @Parameter(title: "Backgroud Siuuuu", default: "qq")
+        var siu: String
+    }
 
-enum BgColor: String, CaseIterable, AppEnum {
-    static var typeDisplayRepresentation: TypeDisplayRepresentation = "TypeDisplayRepresentation BgColor"
-    
-    static var caseDisplayRepresentations: [BgColor : DisplayRepresentation] = [
-        .blue: "Blue xanh",
-        .green: "Green xanh lá",
-        .red: "Red đỏ",
-        .orange: "Cam orange"
-    ]
-    
-    case blue
-    case green
-    case red
-    case orange
-    
-    var color: Color {
-        switch self {
-        case .blue:
-            return Color.blue
-        case .green:
-            return Color.green
-        case .red:
-            return Color.red
-        case .orange:
-            return Color.orange
+    enum BgColor: String, CaseIterable, AppEnum {
+        static var typeDisplayRepresentation: TypeDisplayRepresentation = "TypeDisplayRepresentation BgColor"
+        
+        static var caseDisplayRepresentations: [BgColor : DisplayRepresentation] = [
+            .blue: "Blue xanh",
+            .green: "Green xanh lá",
+            .red: "Red đỏ",
+            .orange: "Cam orange"
+        ]
+        
+        case blue
+        case green
+        case red
+        case orange
+        
+        var color: Color {
+            switch self {
+            case .blue:
+                return Color.blue
+            case .green:
+                return Color.green
+            case .red:
+                return Color.red
+            case .orange:
+                return Color.orange
+            }
         }
     }
-}
 ```
 
 # II. Providing your app’s capabilities to system services
