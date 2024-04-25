@@ -4,7 +4,7 @@
 <dict>
 	<key>NSUserActivityTypes</key>
 	<array>
-		<string>VietIntentIntent</string>
+		<string>SelectCategoryIntent</string>
 	</array>
 </dict>
 </plist>

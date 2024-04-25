@@ -15,17 +15,15 @@
 		0496C2BD2BD8EC5300B08809 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0496C2BC2BD8EC5300B08809 /* SwiftUI.framework */; };
 		0496C2C02BD8EC5300B08809 /* WidgetTestingIOS16Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496C2BF2BD8EC5300B08809 /* WidgetTestingIOS16Bundle.swift */; };
 		0496C2C22BD8EC5300B08809 /* WidgetTestingIOS16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496C2C12BD8EC5300B08809 /* WidgetTestingIOS16.swift */; };
-		0496C2C42BD8EC5300B08809 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496C2C32BD8EC5300B08809 /* AppIntent.swift */; };
 		0496C2C62BD8EC5500B08809 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0496C2C52BD8EC5500B08809 /* Assets.xcassets */; };
 		0496C2CA2BD8EC5500B08809 /* WidgetTestingIOS16Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0496C2B82BD8EC5300B08809 /* WidgetTestingIOS16Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		0496C2D02BD8EE1100B08809 /* ConfigureAppIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0496C2CF2BD8EE1100B08809 /* ConfigureAppIntent.intentdefinition */; };
-		0496C3082BD8F9CA00B08809 /* ConfigureAppIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0496C2CF2BD8EE1100B08809 /* ConfigureAppIntent.intentdefinition */; };
+		0496C2D02BD8EE1100B08809 /* SelectCategoryIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0496C2CF2BD8EE1100B08809 /* SelectCategoryIntent.intentdefinition */; };
+		0496C3082BD8F9CA00B08809 /* SelectCategoryIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0496C2CF2BD8EE1100B08809 /* SelectCategoryIntent.intentdefinition */; };
 		0496C30E2BD90ED800B08809 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0496C2D72BD8F88D00B08809 /* Intents.framework */; };
 		0496C3112BD90ED800B08809 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496C3102BD90ED800B08809 /* IntentHandler.swift */; };
 		0496C3152BD90ED800B08809 /* VietIntent.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0496C30D2BD90ED800B08809 /* VietIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		0496C3192BD9102400B08809 /* ConfigureAppIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0496C2CF2BD8EE1100B08809 /* ConfigureAppIntent.intentdefinition */; };
+		0496C3192BD9102400B08809 /* SelectCategoryIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0496C2CF2BD8EE1100B08809 /* SelectCategoryIntent.intentdefinition */; };
 		0496C31B2BD910B700B08809 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496C3102BD90ED800B08809 /* IntentHandler.swift */; };
-		0496C31D2BD910F300B08809 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496C3102BD90ED800B08809 /* IntentHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,10 +69,9 @@
 		0496C2BC2BD8EC5300B08809 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		0496C2BF2BD8EC5300B08809 /* WidgetTestingIOS16Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTestingIOS16Bundle.swift; sourceTree = "<group>"; };
 		0496C2C12BD8EC5300B08809 /* WidgetTestingIOS16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTestingIOS16.swift; sourceTree = "<group>"; };
-		0496C2C32BD8EC5300B08809 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		0496C2C52BD8EC5500B08809 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0496C2C72BD8EC5500B08809 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0496C2CF2BD8EE1100B08809 /* ConfigureAppIntent.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ConfigureAppIntent.intentdefinition; sourceTree = "<group>"; };
+		0496C2CF2BD8EE1100B08809 /* SelectCategoryIntent.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = SelectCategoryIntent.intentdefinition; sourceTree = "<group>"; };
 		0496C2D12BD8EE4100B08809 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0496C2D72BD8F88D00B08809 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		0496C2E22BD8F88E00B08809 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
@@ -168,10 +165,9 @@
 			children = (
 				0496C2BF2BD8EC5300B08809 /* WidgetTestingIOS16Bundle.swift */,
 				0496C2C12BD8EC5300B08809 /* WidgetTestingIOS16.swift */,
-				0496C2C32BD8EC5300B08809 /* AppIntent.swift */,
 				0496C2C52BD8EC5500B08809 /* Assets.xcassets */,
 				0496C2C72BD8EC5500B08809 /* Info.plist */,
-				0496C2CF2BD8EE1100B08809 /* ConfigureAppIntent.intentdefinition */,
+				0496C2CF2BD8EE1100B08809 /* SelectCategoryIntent.intentdefinition */,
 			);
 			path = WidgetTestingIOS16;
 			sourceTree = "<group>";
@@ -316,8 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0496C2A92BD8EBFF00B08809 /* ContentView.swift in Sources */,
-				0496C2D02BD8EE1100B08809 /* ConfigureAppIntent.intentdefinition in Sources */,
-				0496C31D2BD910F300B08809 /* IntentHandler.swift in Sources */,
+				0496C2D02BD8EE1100B08809 /* SelectCategoryIntent.intentdefinition in Sources */,
 				0496C2A72BD8EBFF00B08809 /* WidgetIOS16App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,9 +323,8 @@
 			files = (
 				0496C2C02BD8EC5300B08809 /* WidgetTestingIOS16Bundle.swift in Sources */,
 				0496C31B2BD910B700B08809 /* IntentHandler.swift in Sources */,
-				0496C3082BD8F9CA00B08809 /* ConfigureAppIntent.intentdefinition in Sources */,
+				0496C3082BD8F9CA00B08809 /* SelectCategoryIntent.intentdefinition in Sources */,
 				0496C2C22BD8EC5300B08809 /* WidgetTestingIOS16.swift in Sources */,
-				0496C2C42BD8EC5300B08809 /* AppIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0496C3112BD90ED800B08809 /* IntentHandler.swift in Sources */,
-				0496C3192BD9102400B08809 /* ConfigureAppIntent.intentdefinition in Sources */,
+				0496C3192BD9102400B08809 /* SelectCategoryIntent.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

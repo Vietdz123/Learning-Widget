@@ -8,33 +8,27 @@
 import WidgetKit
 import SwiftUI
 
-struct Provider: AppIntentTimelineProvider {
+struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
+        SimpleEntry(date: Date(), name: "place holder")
     }
 
-    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: configuration)
+    func getSnapshot(for configuration: SelectCategoryIntent, in context: Context, completion: @escaping (SimpleEntry) -> Void) {
+        completion(SimpleEntry(date: Date(), name: "snapshot"))
     }
     
-    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
-        var entries: [SimpleEntry] = []
+    func getTimeline(for configuration: SelectCategoryIntent, in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> Void) {
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
-        }
+        let entry = SimpleEntry(date: .now, name: configuration.vietName ?? "")
+        
 
-        return Timeline(entries: entries, policy: .atEnd)
+        completion(Timeline(entries: [entry], policy: .atEnd))
     }
 }
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let configuration: ConfigurationAppIntent
+    let name: String
 }
 
 struct WidgetTestingIOS16EntryView : View {
@@ -46,7 +40,7 @@ struct WidgetTestingIOS16EntryView : View {
             Text(entry.date, style: .time)
 
             Text("Favorite Emoji:")
-            Text(entry.configuration.favoriteEmoji)
+            Text(entry.name)
         }
     }
 }
@@ -55,30 +49,17 @@ struct WidgetTestingIOS16: Widget {
     let kind: String = "WidgetTestingIOS16"
 
     var body: some WidgetConfiguration {
-        AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
-            WidgetTestingIOS16EntryView(entry: entry)
-                .containerBackground(.fill.tertiary, for: .widget)
-        }
+        IntentConfiguration(kind: kind,
+                              intent: SelectCategoryIntent.self,
+                              provider: Provider(),
+                              content: { entry in
+                                WidgetTestingIOS16EntryView(entry: entry)
+                                  .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                  .background(Color.white)
+                              })
+              .configurationDisplayName("My Widget")
+              .description("This is an example widget.")
+              .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }
 
-extension ConfigurationAppIntent {
-    fileprivate static var smiley: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
-        return intent
-    }
-    
-    fileprivate static var starEyes: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
-        return intent
-    }
-}
-
-#Preview(as: .systemSmall) {
-    WidgetTestingIOS16()
-} timeline: {
-    SimpleEntry(date: .now, configuration: .smiley)
-    SimpleEntry(date: .now, configuration: .starEyes)
-}
